@@ -1,0 +1,118 @@
+---
+import '../styles/global.css';
+---
+<div id="container">
+  <main>
+    <div class="mainFlex">
+      <div class="mainInfo">
+        <div class="mainDiv">
+          <img src="/FAKS.svg" class="faksHero" alt="FAKS logo" />
+          <div class="break"></div>
+          <div class="mainText">
+            <div>7. i 8. lipnja, FER</div>
+            <div>Unska 3, Zagreb</div>
+            <div>more text?</div>
+          </div>
+          <div class="break"></div>
+        </div>
+      </div>
+      <img src="/hero.svg" class="mainHero" alt="Hero image" />
+    </div>
+  </main>
+</div>
+<style>
+  #container {
+    height: 100%;
+    background-color: var(--black);
+    background-image: url('/background.svg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .mainFlex {
+    padding-top: 0rem;
+    display: flex;
+    flex-direction: row;
+    gap: 0; /* Reduced gap between the elements */
+    width: 100%;
+    align-items: center; /* Align items vertically */
+  }
+  .mainInfo {
+    width: 50%; /* Slightly reduced width */
+    vertical-align: middle;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; /* Push content toward the hero image */
+    padding-right: 1rem; /* Add some padding on the right */
+  }
+  .mainHero {
+  height: 100%;
+  width: 50%;
+  background-repeat: no-repeat;
+  margin-top: 220; /* Adjust this value to move it further down */
+  }
+
+  .faksHero {
+    width: 100%;
+  }
+  .break {
+    border-top: 1px solid var(--blue);
+  }
+  .mainDiv {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+  .mainText {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 1rem;
+    align-items: center;
+    font-size: 2rem;
+  }
+  
+  /* Mobile responsive styles */
+  @media screen and (max-width: 768px) {
+    .mainFlex {
+      flex-direction: column;
+      padding-top: 2rem;
+      gap: 1rem; /* Add some gap for mobile */
+    }
+    .mainInfo {
+      width: 100%;
+      order: 2;
+      justify-content: center; /* Center content on mobile */
+      padding-right: 0;
+    }
+    .mainHero {
+      width: 90%; /* Slightly reduce width on mobile for better margins */
+      order: 1;
+      height: 200px;
+      object-fit: contain;
+	  padding-top: 10%;
+      margin: 200; /* Center the hero image */
+    }
+    .mainDiv {
+      width: 90%;
+    }
+    .mainText {
+      font-size: 1.2rem;
+    }
+  }
+  
+  /* Small mobile devices */
+  @media screen and (max-width: 480px) {
+    .mainText {
+      font-size: 1rem;
+    }
+  }
+</style>

@@ -1,0 +1,60 @@
+---
+interface Props {
+    icon: string;
+    title: string;
+    text: string;
+    color: string;
+}
+
+const {icon, title, text, color} = Astro.props;
+---
+
+<div class="RightItem">
+    <div class="RightItemRight">
+        <img src={icon} class="itemIcon" />
+    </div>
+    <div class="itemTextField">
+        <div class="itemTitle" style={`color: ${color}`}>
+            {title}
+        </div>
+        <div class="itemText">
+            {text}
+        </div>
+    </div>
+</div>
+
+
+<style>
+.itemIcon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.itemTitle {
+    font-size: 1.5rem;
+}
+
+.itemText {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.itemTextField {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.1rem;
+}
+
+.RightItem{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.RightItemRight{
+    display: flex;
+    height: 30%;
+    justify-content: flex-start;
+}
+</style>

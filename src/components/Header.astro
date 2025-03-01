@@ -1,0 +1,126 @@
+---
+const links = [
+  {
+    title: "Info",
+    link: "/info",
+  },
+  {
+    title: "Raspored",
+    link: "/raspored",
+  },
+  {
+    title: "Predavači",
+    link: "/predavaci",
+  },
+  {
+    title: "CTF",
+    link: "/ctf",
+  },
+]
+---
+<div class="header" transition:animate="none">
+  <div class="flexItems">
+    <div class="mobileMenuButton">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="headerLinks">
+      {links.map((link) => <a href={link.link}>{link.title}</a>)}
+    </div>
+  </div>
+</div>
+
+<style>
+  .header {
+    color: white;
+    display: flex;
+    justify-content: right;
+    padding-top: 2rem;
+    z-index: 100;
+    top: 0;
+    position: fixed;
+    width: 100%;
+  }
+  .flexItems {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    margin-right: 5rem;
+  }
+  .headerLinks {
+    display: flex;
+    gap: 2rem;
+  }
+  .headerLinks a {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+  }
+  .mobileMenuButton {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+  }
+  .mobileMenuButton span {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .flexItems {
+      margin-right: 2rem;
+      width: 100%;
+      position: relative;
+    }
+    .mobileMenuButton {
+      display: flex;
+      z-index: 101;
+    }
+    .headerLinks {
+      position: fixed;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.9);
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 0;
+      overflow: hidden;
+      padding: 5rem 0 0 0;
+      transition: width 0.3s ease;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .headerLinks.active {
+      width: 70%;
+      padding: 5rem 2rem 0 2rem;
+    }
+    .headerLinks a {
+      font-size: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .headerLinks.active a {
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+    
+    document.addEventListener('DOMContentLoaded', () => {
+  const mobileMenuButton = document.querySelector('.mobileMenuButton');
+  const headerLinks = document.querySelector('.headerLinks');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    headerLinks?.classList.toggle('active');
+  });
+});
+
+</script>
