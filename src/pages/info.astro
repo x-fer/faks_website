@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LeftSide from '@src/components/info/LeftSide.astro';
+import RightSide from '@src/components/info/RightSide.astro';
+import '@src/styles/global.css';
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+    <div id="cont">
+        <main>
+            <div class="infoFlex">
+                <LeftSide />
+                <RightSide />
+            </div>
+        </main>
+    </div>
+</Layout>
+
+<style>
+    #cont {
+		height: 100%;
+		background-color: var(--black);
+		background-image: url('/background.svg');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+	}
+
+    .infoFlex{
+        padding-top: 5rem;
+		display: flex;
+		flex-direction: row;
+		gap: 2rem;
+		width: 100%;
+    }
+
+    main {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+	}
+</style>

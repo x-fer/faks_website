@@ -1,0 +1,85 @@
+---
+import RightItem from "./RightItem.astro"
+const data = [
+    {
+        icon: "/icons/Vector1.svg",
+        title: "Predavanja",
+        text: "Prvi dan konferencije održavat će se predavanja vodećih stručnjaka u kibernetičkoj sigurnosti, a podijeljena su u dvije trake: policy i tech.",
+        color: "var(--blue)"
+    },
+    {
+        icon: "/icons/Vector2.svg",
+        title: "CTF",
+        text: "Timsko natjecanje u kojem će se u pet kategorija (web, pwn, rev, cry, misc) provjeriti velik broj sigurnosnih vještina.",
+        color: "var(--red)"
+    },
+    {
+        icon: "/icons/Vector3.svg",
+        title: "Mingle",
+        text: "Neformalno druženje uz kavu i grickalice – prilika za umrežavanje s kolegama i stručnjacima.",
+        color: "var(--blue)"
+    },
+    {
+        icon: "/icons/Vector4.svg",
+        title: "Flash talks",
+        text: "Timsko natjecanje u kojem će se u pet kategorija (web, pwn, rev, cry, misc) provjeriti velik broj sigurnosnih vještina.",
+        color: "var(--red)"
+    },
+    {
+        icon: "/icons/Vector5.svg",
+        title: "Panel rasprava",
+        text: "Eksperti iz industrije raspravljaju o najnovijim trendovima, prijetnjama i budućnosti sigurnosti.",
+        color: "var(--blue)"
+    }
+]
+import '@src/styles/global.css';
+---
+
+<div class="right-side">
+  <div class="right-sidecontent">
+    <div id="expect">
+        ŠTO OČEKIVATI?
+    </div>
+    <div class="break30"></div>
+  </div>
+  <div class="grid_cont">
+    {data.map((item) => (
+        <RightItem icon={item.icon} title={item.title} text={item.text} color={item.color} />
+    ))}
+  </div>
+</div>
+
+<style>
+    #expect {
+        font-size: 2rem;
+        color: var(--blue);
+        width: 100%;
+        text-align: left;
+    }
+    .right-side {
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+    
+    .right-sidecontent {
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    
+    .grid_cont {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 5px;
+        width: 100%;
+        margin: 0 auto;
+        row-gap: 2rem;
+    }
+</style>

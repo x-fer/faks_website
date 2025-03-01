@@ -1,0 +1,90 @@
+---
+import '../styles/global.css';
+---
+
+<div id="container">
+	<main>
+		<div class="mainFlex">
+			<div class="mainInfo">
+				<div class="mainDiv">
+					<img src="/FAKS.svg" class="faksHero" />
+					<div class="break"></div>
+					<div class="mainText">
+						<div>7. i 8. lipnja, FER</div>
+						<div>Unska 3, Zagreb</div>
+						<div>more text?</div>
+					</div>
+					<div class="break"></div>
+					</div>
+			</div>
+			<img src="/hero.svg" class="mainHero" />
+		</div>
+	</main>
+</div>
+
+<style>
+	#container {
+		height: 100%;
+		background-color: var(--black);
+		background-image: url('/background.svg');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+	}
+
+	main {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.mainFlex {
+		padding-top: 5rem;
+		display: flex;
+		flex-direction: row;
+		gap: 2rem;
+		width: 100%;
+	}
+
+	.mainInfo {
+		width: 55%;
+		vertical-align: middle;
+		margin: auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.mainHero {
+		height: 100%;
+		width: 45%;
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		display: flex;
+	}
+
+	.faksHero {
+		width: 100%;
+	}
+
+	.break {
+		border-top: 1px solid var(--blue);
+	}
+
+	.mainDiv {
+		display: flex;
+		flex-direction: column;
+		width: 80%;
+	}
+
+	.mainText {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		display: flex;
+		flex-direction: column;
+		color: white;
+		gap: 1rem;
+		align-items: center;
+		font-size: 2rem;
+	}
+</style>

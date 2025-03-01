@@ -1,0 +1,23 @@
+:root {
+    --black: #000000;
+    --red: #FF0030;
+    --blue: #017EFE;
+    --dark_red: #9E0035;
+    --dark_blue: #011EFE;
+}
+
+.sponzori {
+    color: var(--blue);
+    padding: 20px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.break {
+    border-top: 1px solid var(--blue);
+}
+
+.break30 {
+    border-top: 1px solid var(--blue);
+    width: 30%;
+  }

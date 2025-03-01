@@ -1,0 +1,58 @@
+---
+const links = [
+    {
+        title: "Info",
+        link: "/info",
+    },
+    {
+        title: "Raspored",
+        link: "/raspored",
+    },
+    {
+        title: "Predavači",
+        link: "/predavaci",
+    },
+    {
+        title: "CTF",
+        link: "/ctf",
+    },
+]
+---
+
+<div class="header" transition:animate="none">
+    <div class="flexItems">
+        <div class="headerLinks">
+            {links.map((link) => <a href={link.link}>{link.title}</a>)}
+          </div>
+    </div>
+</div>
+
+<style>
+    .header {
+        color: white;
+        display: flex;
+        justify-content: right;
+        padding-top: 2rem;
+        z-index: 100;
+        top: 0;
+        position: fixed;
+        width: 100%;
+    }
+
+    .flexItems {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+        margin-right: 5rem;
+    }
+
+    .headerLinks {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .headerLinks a {
+        color: white;
+        text-decoration: none;
+        font-size: 2rem;
+    }
