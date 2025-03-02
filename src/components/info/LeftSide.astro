@@ -1,59 +1,103 @@
 ---
 
 ---
-
 <div class="mainInfo">
   <div class="mainDiv">
-    <img src="/FAKS.svg" class="faksHero" />
+    <div class="logoContainer">
+      <img src="/FAKS.svg" class="faksHero" />
+    </div>
     <div class="break"></div>
     <div class="mainText">
       <div class="leftSideText">FER-ova akademska konferencija o sigurnosti (FAKS) projekt je koji okuplja studente, stručnjake i entuzijaste s ciljem edukacije i podizanja razine svijesti o kibernetičkoj sigurnosti.</div>
     </div>
-    <div class="sponzori">SPONZORI</div>
+    <div class="sponsorsContainer">
+      <div class="sponzori">SPONZORI</div>
+    </div>
     <div class="break"></div>
   </div>
 </div>
-
 <style>
-  .mainInfo {
-    width: 35%;
-    vertical-align: middle;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .mainHero {
-    height: 100%;
-    width: 45%;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    display: flex;
-  }
-
-  .faksHero {
+.mainInfo {
+  width: 35%;
+  vertical-align: middle;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
     width: 100%;
   }
-
-  .mainDiv {
-    display: flex;
-    flex-direction: column;
+}
+.logoContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.mainHero {
+  height: 100%;
+  width: 45%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: flex;
+}
+.faksHero {
+  width: 120%;
+  margin-top: 100px;
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
     width: 80%;
+    margin-top: 100px; 
   }
-
-  .mainText {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    gap: 1rem;
+}
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    width: 100%;
     align-items: center;
-    font-size: 2rem;
   }
-
-  .leftSideText{
-    font-size: 1.5rem;
+}
+.mainText {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 1rem;
+  align-items: center;
+}
+.leftSideText{
+  font-size: 1rem; /* Further reduced text size */
+  line-height: 1.5;
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0 1rem;
   }
+}
+.sponsorsContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.sponzori {
+  color: white;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+  }
+}
 </style>

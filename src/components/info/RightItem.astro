@@ -1,60 +1,72 @@
 ---
 interface Props {
-    icon: string;
-    title: string;
-    text: string;
-    color: string;
+  icon: string;
+  title: string;
+  text: string;
+  color: string;
 }
-
 const {icon, title, text, color} = Astro.props;
 ---
-
 <div class="RightItem">
-    <div class="RightItemRight">
-        <img src={icon} class="itemIcon" />
+  <div class="RightItemRight">
+    <img src={icon} class="itemIcon" />
+  </div>
+  <div class="itemTextField">
+    <div class="itemTitle" style={`color: ${color}`}>
+      {title}
     </div>
-    <div class="itemTextField">
-        <div class="itemTitle" style={`color: ${color}`}>
-            {title}
-        </div>
-        <div class="itemText">
-            {text}
-        </div>
+    <div class="itemText">
+      {text}
     </div>
+  </div>
 </div>
-
-
 <style>
 .itemIcon {
-    width: 2rem;
-    height: 2rem;
+  width: 2rem;
+  height: 2rem;
 }
-
 .itemTitle {
-    font-size: 1.5rem;
-}
-
-.itemText {
+  font-size: 1.3rem; /* Reduced from 1.5rem */
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
     font-size: 1.2rem;
-    color: white;
+  }
 }
-
+.itemText {
+  font-size: 0.9rem; /* Reduced from 1.2rem */
+  color: white;
+  line-height: 1.4;
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    font-size: 0.85rem;
+  }
+}
 .itemTextField {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 0.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.1rem;
 }
-
 .RightItem{
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    padding: 0 0.5rem;
+  }
 }
-
 .RightItemRight{
-    display: flex;
-    height: 30%;
-    justify-content: flex-start;
+  display: flex;
+  height: 30%;
+  justify-content: flex-start;
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 }
 </style>
