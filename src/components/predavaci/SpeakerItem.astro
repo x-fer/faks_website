@@ -1,0 +1,61 @@
+---
+interface Props {
+  profile: string;
+  name: string;
+  title: string;
+  type: string;
+  about: string;
+  text: string;
+  date: string;
+}
+
+const { profile, name, title, type, about, text, date } = Astro.props;
+---
+
+<div class="grid grid-cols-3 grid-rows-1 py-2 w-full gap-4 my-10">
+  <div class="flex flex-col col-span-1 gap-2">
+    <div class="flex justify-center">
+      <img src={profile} class="rounded-full border-2 w-4/6" />
+    </div>
+    <div class="text-[#D2D2D2] text-center italic font-bold text-lg">
+      {name}
+    </div>
+  </div>
+  <div class="col-span-2 flex flex-col gap-4">
+    <div class="flex flex-row gap-4">
+      <div
+        class="flex justify-center items-center text-[#D2D2D2] text-2xl bg-[#2E0F0F] border-2 border-[#930035] w-20 rounded-md"
+      >
+        {
+          type === "tech" ? (
+            <div class="color-[#BCBCBC] text-sm">TECH</div>
+          ) : (
+            <div class="color-[#BCBCBC] text-sm">POLICY</div>
+          )
+        }
+      </div>
+      <div class="text-[#D2D2D2] text-lg font-bold">
+        {title}
+      </div>
+    </div>
+    <div
+      class="bg-black w-full container flex flex-col gap-6 px-12 py-4 rounded-md border-2 border-[#4A4A4A]"
+    >
+      <div class="flex flex-col gap-2">
+        <div class="text-[#007EFF] font-bold">ABOUT THE SPEAKER</div>
+        <div class="text-[#C7C7C7] italic">
+          {about}
+        </div>
+      </div>
+      <div class="flex flex-col gap-2">
+        <div class="text-[#DB062E] font-bold">ABOUT THE TALK</div>
+        <div class="text-[#F5F5F5]">
+          {text}
+        </div>
+      </div>
+      <div class="text-[#F5F5F5] text-lg font-bold">
+        {date}
+      </div>
+    </div>
+  </div>
+</div>

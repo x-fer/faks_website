@@ -1,58 +1,35 @@
 ---
 const links = [
     {
-        title: "Info",
+        title: "info",
         link: "/info",
     },
     {
-        title: "Raspored",
+        title: "raspored",
         link: "/raspored",
     },
     {
-        title: "Predavači",
+        title: "predavači",
         link: "/predavaci",
+    },
+    {
+        title: "obavijesti",
+        link: "/obavijesti",
     },
     {
         title: "CTF",
         link: "/ctf",
     },
 ]
+
+import '@styles/global.css';
 ---
 
-<div class="header" transition:animate="none">
-    <div class="flexItems">
-        <div class="headerLinks">
+<div class="w-screen bg-linear-to-b from-black to-transparent fixed top-0 left-0 z-50">
+    <div class="container flex w-full justify-start items-center mx-auto gap-8">
+        <a href="/"><img class="w-3/4" src="/logo.svg" alt="logo" /></a>
+        <div class="flex text-[#AAAAAA] text-lg gap-10">
             {links.map((link) => <a href={link.link}>{link.title}</a>)}
           </div>
     </div>
 </div>
-
-<style>
-    .header {
-        color: white;
-        display: flex;
-        justify-content: right;
-        padding-top: 2rem;
-        z-index: 100;
-        top: 0;
-        position: fixed;
-        width: 100%;
-    }
-
-    .flexItems {
-        display: flex;
-        justify-content: flex-end;
-        flex-direction: row;
-        margin-right: 5rem;
-    }
-
-    .headerLinks {
-        display: flex;
-        gap: 2rem;
-    }
-
-    .headerLinks a {
-        color: white;
-        text-decoration: none;
-        font-size: 2rem;
-    }
