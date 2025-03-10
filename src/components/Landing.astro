@@ -2,37 +2,39 @@
 import "@styles/global.css";
 ---
 
-<div
-  class="bg-transparent bg-[url(/background.svg)] bg-no-repeat bg-cover bg-center w-screen h-screen"
->
-  <div class="container mx-auto">
-    <div class="grid grid-cols-3 grid-rows-1 py-2 h-screen">
-      <div class="col-span-2 my-auto">
-        <div class="flex flex-col gap-20">
-          <div class="flex flex-col items-center">
-            <img src="/FAKS.svg" class="w-full" />
-          </div>
-          <div class="flex justify-between items-center mx-4">
-            <div class="flex gap-2 flex-row items-center">
-              <div>
-                <img src="/lp/calendar.svg" class="w-3/4" alt="calendar" />
-              </div>
-              <div class="bg-[#9E0035] w-0.5 h-12"></div>
-              <div class="text-[#CCCCCC] font-bold">7. i 8. lipnja 2025.</div>
+<div class="container mx-auto h-screen">
+  <div class="grid grid-cols-3 grid-rows-1 py-2 h-full">
+    <div class="col-span-2 my-auto">
+      <div class="flex flex-col gap-52 h-full">
+        <!-- TODO: add text here instead of svg -->
+        <div class="relative">
+          <img src="/FAKS.svg" class="w-full z-20" alt="FAKS logo" />
+          <!-- <div
+            class="inset-0 bg-radial from-red-500 to-75% opacity-70 to-transparent absolute z-10"
+          >
+          </div> -->
+        </div>
+        <div class="flex justify-between items-center mx-4">
+          <div class="flex gap-8 items-center">
+            <img src="/lp/calendar.svg" class="size-14" alt="calendar" />
+            <div class="bg-[#9E0035] w-1 h-20"></div>
+            <div class="text-[#CCCCCC] font-semibold font-open-sans text-3xl">
+              7. i 8. lipnja 2026.
             </div>
-            <div class="flex gap-2 flex-row items-center">
-              <div>
-                <img src="/lp/location.svg" class="w-3/4" alt="location" />
-              </div>
-              <div class="bg-[#9E0035] w-0.5 h-12"></div>
-              <div class="text-[#CCCCCC] font-bold">FER, Unska 3, Zagreb</div>
+          </div>
+          <div class="flex gap-8 items-center">
+            <img src="/lp/location.svg" class="size-14" alt="location" />
+            <div class="bg-[#9E0035] w-1 h-20"></div>
+            <div class="text-[#CCCCCC] font-semibold font-open-sans text-3xl">
+              FER, Unska 3, Zagreb
             </div>
           </div>
         </div>
       </div>
-      <div class="my-auto">
-        <img src="/hero.svg" class="mainHero" />
-      </div>
+    </div>
+
+    <div class="my-auto">
+      <img src="/hero.svg" class="w-full" alt="Hero image" />
     </div>
   </div>
 </div>

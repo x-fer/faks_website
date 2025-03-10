@@ -11,7 +11,7 @@ import Header from "@components/Header.astro";
 		<meta name="generator" content={Astro.generator} />
 		<title>FAKS - Ferova akademska konferencija o sigurnosti</title>
 	</head>
-	<body class="relative">
+	<body class="relative overflow-hidden">
 		<Header />
 		<slot />
 	</body>
@@ -23,11 +23,10 @@ import Header from "@components/Header.astro";
 		font-family: "Nutino Sans", Inter, Roboto, "Helvetica Neue",
 			"Arial Nova", "Nimbus Sans", Arial, sans-serif;
 		width: 100%;
-		height: 100%;
-		background-color: black;
-		background-image: url("/background.svg");
-		background-repeat: repeat-y;
+		background-color: rgba(0, 0, 0, 1);
+		background-image: url("/public/background.svg");
 		background-size: cover;
 		background-position: center;
+		background-repeat: repeat-y;
 	}
 </style>

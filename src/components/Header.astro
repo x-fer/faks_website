@@ -20,16 +20,18 @@ const links = [
         title: "CTF",
         link: "/ctf",
     },
-]
+];
 
-import '@styles/global.css';
+import "@styles/global.css";
 ---
 
-<div class="w-screen bg-linear-to-b from-black to-transparent fixed top-0 left-0 z-50">
-    <div class="container flex w-full justify-start items-center mx-auto gap-8 py-2">
-        <a href="/"><img class="w-3/4" src="/logo.svg" alt="logo" /></a>
-        <div class="flex text-[#AAAAAA] text-lg gap-10">
-            {links.map((link) => <a href={link.link}>{link.title}</a>)}
-          </div>
+<div class="relative w-screen py-5 bg-linear-to-b from-black to-transparent">
+    <div
+        class="container flex items-center mx-auto text-[#AAAAAA] text-xl font-semibold gap-24 font-open-sans z-10"
+    >
+        <a href="/">
+            <img class="" src="/logo.svg" alt="logo" />
+        </a>
+        {links.map((link) => <a href={link.link}>{link.title}</a>)}
     </div>
 </div>
