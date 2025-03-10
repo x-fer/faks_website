@@ -34,40 +34,51 @@ const calculateEventStyle = (start: string, end: string) => {
         (TIME_SLOT_HEIGHT * times.length);
     const height =
         ((endMinutes - startMinutes) / totalMinutes) *
-        (TIME_SLOT_HEIGHT * times.length) + TIME_LINE_HEIGHT;
+            (TIME_SLOT_HEIGHT * times.length) +
+        TIME_LINE_HEIGHT;
 
     return { top: `${top}px`, height: `${height}px` };
 };
 ---
 
 <div class="container mx-auto w-full">
-    <div class="timetable relative border-gray-300 my-20 w-full mx-auto">
-        {
-            times.map((time) => (
-                <div
-                    class="flex w-full gap-5"
-                    style={{ height: `${TIME_SLOT_HEIGHT}px` }}
-                >
-                    <div class="time text-xl font-semibold text-gray-500 font-open-sans flex items-center -translate-y-1/2">
-                        {time}
-                    </div>
-                    <div class="w-full border-t border-gray-600" style={{borderTopWidth: `${TIME_LINE_HEIGHT}px`}} />
-                </div>
-            ))
-        }
-        {
-            events.map((event) => {
-                const style = calculateEventStyle(event.start, event.end);
-                return (
+    <div class="timetable flex relative my-20">
+        <div>
+            {
+                times.map((time) => (
                     <div
-                        class="absolute left-23 right-0 flex items-center justify-center"
-                        style={{ ...style, backgroundColor: event.color }}
+                        style={{ height: `${TIME_SLOT_HEIGHT}px` }}
                     >
-                        {event.title}
+                        <div class="time text-xl font-semibold text-gray-500 font-open-sans flex items-center -translate-y-1/2">
+                            {time}
+                        </div>
                     </div>
-                );
-            })
-        }
+                ))
+            }
+        </div>
+        <div class="absolute w-full">
+            {
+                times.map(_ => {
+                        <div
+                            class="w-full border-t border-gray-600"
+                            style={{ borderTopWidth: `${TIME_LINE_HEIGHT}px`, height: `${TIME_SLOT_HEIGHT}` }}
+                        />
+                })
+            }
+            {
+                events.map((event) => {
+                    const style = calculateEventStyle(event.start, event.end);
+                    return (
+                        <div
+                            class="absolute left-23 right-0 flex items-center justify-center"
+                            style={{ ...style, backgroundColor: event.color }}
+                        >
+                            {event.title}
+                        </div>
+                    );
+                })
+            }
+        </div>
     </div>
 </div>
 
