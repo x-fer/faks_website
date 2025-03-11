@@ -16,10 +16,10 @@ export default function TimeSlotEntry({ event, style }: Props) {
             event.type === "neutral" && "inset-x-5 bg-[#113711] border-[#0C8A19] inset-shadow-green-600/15")}
             style={{ ...style }}
         >
-            <p className="font-open-sans text-md md:text-lg text-white-smoke">{event.title}</p>
+            <p className="font-open-sans text-md md:text-xl text-white-smoke">{event.title}</p>
             {event.speaker &&
             <div className="flex">
-                <p className="font-open-sans uppercase text-xs md:text-md text-gray-400 font-semibold">{event.speaker}</p>
+                <p className="font-open-sans uppercase text-xs md:text-lg text-gray-400">{event.speaker}</p>
             </div>
             }
         </div>
