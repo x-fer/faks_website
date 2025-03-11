@@ -1,9 +1,11 @@
 ---
 import "@styles/global.css";
+import TimeSlotEntry from "./raspored/TimeSlotEntry";
+import Footer from "./Footer";
 
 const times = [];
 const START_HOUR = 9;
-const END_HOUR = 19;
+const END_HOUR = 19; // INCLUSIVE
 
 const TIME_SLOT_HEIGHT = 64; // Height of each time slot in pixels
 const TIME_LINE_HEIGHT = 2;
@@ -11,13 +13,52 @@ const TIME_LINE_HEIGHT = 2;
 for (let hour = START_HOUR; hour < END_HOUR; hour++) {
     times.push(`${hour.toString().padStart(2, "0")}:00`);
     times.push(`${hour.toString().padStart(2, "0")}:30`);
+    // TODO: make the end our inclusive
 }
 
+export type EventInfo = {
+    start: string;
+    end: string;
+    title: string;
+    type: "tech" | "policy" | "keynote" | "neutral",
+    speaker?: string,
+}
 // Example events with start and end times
-const events = [
-    { start: "09:00", end: "10:00", title: "Event 1", color: "#f00" },
-    { start: "10:30", end: "11:00", title: "Event 2", color: "#0f0" },
-    { start: "12:30", end: "14:00", title: "Event 3", color: "#00f" },
+const events: EventInfo[] = [
+    {
+        start: "09:00",
+        end: "09:30",
+        title: "Otvorenje",
+        type: "neutral",
+    },
+    {
+        start: "09:30",
+        end: "10:30",
+        title: "Raspadanje atoma i hakiranje mrkve",
+        type: "tech",
+        speaker: "Ivan Ivanic"
+    },
+    {
+        start: "10:30",
+        end: "11:30",
+        title: "Kako tupim nozem hakirati zlocesti toster?",
+        type: "tech",
+        speaker: "Marko markic"
+    },
+    {
+        start: "12:30",
+        end: "14:00",
+        title: "Some very long event name so that it maybe doesnt fit in the raspored text-box",
+        type: "policy",
+        speaker: "Ludomir ludic"
+    },
+    {
+        start: "11:30",
+        end: "12:30",
+        title: "Keynote",
+        type: "keynote",
+        speaker: "Drazenka zecic"
+    },
 ];
 
 // Calculate the top and height for each event
@@ -41,13 +82,15 @@ const calculateEventStyle = (start: string, end: string) => {
 };
 ---
 
-<div class="container mx-auto w-full">
-    <div class="timetable flex relative my-20">
-        <div>
+<div class="w-full px-5 lg:mx-auto xl:w-2/3 mb-10">
+    <div class="timetable relative flex my-20 gap-x-5">
+        <div class="flex flex-col">
             {
                 times.map((time) => (
                     <div
-                        style={{ height: `${TIME_SLOT_HEIGHT}px` }}
+                        style={{
+                            height: `${TIME_SLOT_HEIGHT}px`,
+                        }}
                     >
                         <div class="time text-xl font-semibold text-gray-500 font-open-sans flex items-center -translate-y-1/2">
                             {time}
@@ -56,36 +99,34 @@ const calculateEventStyle = (start: string, end: string) => {
                 ))
             }
         </div>
-        <div class="absolute w-full">
+        <div class="w-full relative">
             {
-                times.map(_ => {
-                        <div
-                            class="w-full border-t border-gray-600"
-                            style={{ borderTopWidth: `${TIME_LINE_HEIGHT}px`, height: `${TIME_SLOT_HEIGHT}` }}
-                        />
-                })
+                times.map((_, index) => (
+                    <div
+                        class="absolute w-full border-t border-gray-600"
+                        style={{
+                            top: `${TIME_SLOT_HEIGHT * index}px`,
+                            height: `${TIME_SLOT_HEIGHT}px`,
+                            borderTopWidth: `${TIME_LINE_HEIGHT}px`,
+                        }}
+                    />
+                ))
             }
             {
                 events.map((event) => {
                     const style = calculateEventStyle(event.start, event.end);
-                    return (
-                        <div
-                            class="absolute left-23 right-0 flex items-center justify-center"
-                            style={{ ...style, backgroundColor: event.color }}
-                        >
-                            {event.title}
-                        </div>
-                    );
+                    return (<TimeSlotEntry event={event} style={style}/>)
                 })
             }
         </div>
     </div>
+    <Footer />
 </div>
 
 <style>
     .timetable {
         height: calc(
-            (19 - 9) * 2 * 64px
+            (19 - 9) * 2 * `${TIME_SLOT_HEIGHT}px`
         ); /* Adjust height based on the number of time slots */
     }
 </style>
