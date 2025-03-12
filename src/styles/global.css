@@ -3,15 +3,22 @@
 
 @theme {
     --font-open-sans: "Open Sans", sans-serif;
-    --color-white-smoke: #f5f5f5
+    --color-white-smoke: #f5f5f5;
+
+    --color-tech-fill: #360E12;
+    --color-tech-stroke: #711B38;
+
+    --color-policy-fill: #0C142F;
+    --color-policy-stroke: #017EFE;
+
+    --color-keynote-fill: #1D1025;
+    --color-keynote-stroke: #752C7B;
+
+    --color-neutral-fill: #113711;
+    --color-neutral-stroke: #0C8A19;
 }
 
 :root {
-    --black: #000000;
-    --red: #FF0030;
-    --blue: #017EFE;
-    --dark_red: #9E0035;
-    --dark_blue: #011EFE;
     color: #f5f5f5;
 }
 

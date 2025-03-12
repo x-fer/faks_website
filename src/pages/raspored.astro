@@ -1,9 +1,9 @@
 ---
 import "@styles/global.css";
 import Layout from "@src/layouts/Layout.astro";
-import RasporedPage from "@src/components/RasporedPage.astro";
+import RasporedPage from "@src/components/RasporedPage";
 ---
 
 <Layout>
-    <RasporedPage />
+    <RasporedPage client:load />
 </Layout>
