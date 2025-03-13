@@ -7,6 +7,7 @@ import { cn } from "@src/assets/lib/utils";
 const times: string[] = [];
 const START_HOUR = 9;
 const END_HOUR = 19; // INCLUSIVE
+// TODO: extend this to 20 hours, need to adjust height of time displkay
 
 const TIME_SLOT_HEIGHT = 64; // Height of each time slot in pixels
 const TIME_LINE_HEIGHT = 2;
@@ -23,44 +24,132 @@ export type EventInfo = {
   title: string;
   type: "tech" | "policy" | "keynote" | "neutral";
   speaker?: string;
+  small?: boolean
 };
 // Example events with start and end times
 const events: EventInfo[][] = [
   [
     {
-      start: "09:00",
-      end: "09:30",
+      start: "09:30",
+      end: "10:00",
       title: "Otvorenje",
       type: "neutral",
     },
     {
-      start: "09:30",
-      end: "10:30",
-      title: "Raspadanje atoma i hakiranje mrkve",
-      type: "tech",
-      speaker: "Ivan Ivanic",
-    },
-    {
-      start: "10:30",
-      end: "11:30",
-      title: "Kako tupim nozem hakirati zlocesti toster?",
-      type: "tech",
-      speaker: "Marko markic",
-    },
-    {
-      start: "12:30",
-      end: "14:00",
-      title:
-        "Some very long event name so that it maybe doesnt fit in the raspored text-box",
-      type: "policy",
-      speaker: "Ludomir ludic",
-    },
-    {
-      start: "11:30",
-      end: "12:30",
-      title: "Keynote",
+      start: "10:00",
+      end: "10:45",
+      title: "TBA - Policy keynote",
       type: "keynote",
-      speaker: "Drazenka zecic",
+      speaker: "TBA",
+    },
+    // talks set 1
+    {
+      start: "11:00",
+      end: "11:45",
+      title:
+        "TBA",
+      type: "tech",
+      speaker: "TBA",
+    },
+    {
+      start: "11:00",
+      end: "11:45",
+      title:
+        "TBA",
+      type: "policy",
+      speaker: "TBA",
+    },
+    // talks set 2
+    {
+      start: "12:00",
+      end: "12:45",
+      title:
+        "TBA",
+      type: "tech",
+      speaker: "TBA",
+    },
+    {
+      start: "12:00",
+      end: "12:45",
+      title:
+        "TBA",
+      type: "policy",
+      speaker: "TBA",
+    },
+    // lunch
+    {
+      start: "12:45",
+      end: "13:45",
+      title: "Ručak",
+      type: "neutral"
+    },
+    {
+      start: "13:45",
+      end: "14:30",
+      title: "TBA - Tech keynote",
+      type: "keynote",
+      speaker: "TBA",
+    },
+    {
+      start: "14:30",
+      end: "14:45",
+      title: "Intermezzo - Zahvale",
+      type: "neutral",
+      small: true
+    },
+    {
+      start: "14:45",
+      end: "15:30",
+      title:
+        "TBA",
+      type: "tech",
+      speaker: "TBA",
+    },
+    {
+      start: "14:45",
+      end: "15:30",
+      title:
+        "TBA",
+      type: "policy",
+      speaker: "TBA",
+    },
+    {
+      start: "15:30",
+      end: "16:00",
+      title: "Kaffica time!",
+      type: "neutral",
+    },
+    {
+      start: "16:00",
+      end: "16:45",
+      title:
+        "TBA",
+      type: "tech",
+      speaker: "TBA",
+    },
+    {
+      start: "16:00",
+      end: "16:45",
+      title:
+        "TBA",
+      type: "policy",
+      speaker: "TBA",
+    },
+    {
+      start: "17:00",
+      end: "17:45",
+      title:
+        "TBA",
+      type: "tech",
+      speaker: "TBA",
+    },
+    {
+      start: "17:00",
+      end: "17:45",
+      title:
+        "TBA",
+      type: "policy",
+      speaker: "TBA",
     },
   ],
   [
@@ -88,7 +177,7 @@ const calculateEventStyle = (start: string, end: string) => {
     (TIME_SLOT_HEIGHT * times.length);
   const height =
     ((endMinutes - startMinutes) / totalMinutes) *
-      (TIME_SLOT_HEIGHT * times.length) +
+    (TIME_SLOT_HEIGHT * times.length) +
     TIME_LINE_HEIGHT;
 
   return { top: `${top}px`, height: `${height}px`, zIndex: top };
