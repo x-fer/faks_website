@@ -24,7 +24,7 @@ export type EventInfo = {
   title: string;
   type: "tech" | "policy" | "keynote" | "neutral";
   speaker?: string;
-  small?: boolean
+  small?: boolean;
 };
 // Example events with start and end times
 const events: EventInfo[][] = [
@@ -46,16 +46,14 @@ const events: EventInfo[][] = [
     {
       start: "11:00",
       end: "11:45",
-      title:
-        "TBA",
+      title: "TBA",
       type: "tech",
       speaker: "TBA",
     },
     {
       start: "11:00",
       end: "11:45",
-      title:
-        "TBA",
+      title: "TBA",
       type: "policy",
       speaker: "TBA",
     },
@@ -63,16 +61,14 @@ const events: EventInfo[][] = [
     {
       start: "12:00",
       end: "12:45",
-      title:
-        "TBA",
+      title: "TBA",
       type: "tech",
       speaker: "TBA",
     },
     {
       start: "12:00",
       end: "12:45",
-      title:
-        "TBA",
+      title: "TBA",
       type: "policy",
       speaker: "TBA",
     },
@@ -81,7 +77,7 @@ const events: EventInfo[][] = [
       start: "12:45",
       end: "13:45",
       title: "Ručak",
-      type: "neutral"
+      type: "neutral",
     },
     {
       start: "13:45",
@@ -95,21 +91,19 @@ const events: EventInfo[][] = [
       end: "14:45",
       title: "Intermezzo - Zahvale",
       type: "neutral",
-      small: true
+      small: true,
     },
     {
       start: "14:45",
       end: "15:30",
-      title:
-        "TBA",
+      title: "TBA",
       type: "tech",
       speaker: "TBA",
     },
     {
       start: "14:45",
       end: "15:30",
-      title:
-        "TBA",
+      title: "TBA",
       type: "policy",
       speaker: "TBA",
     },
@@ -122,32 +116,28 @@ const events: EventInfo[][] = [
     {
       start: "16:00",
       end: "16:45",
-      title:
-        "TBA",
+      title: "TBA",
       type: "tech",
       speaker: "TBA",
     },
     {
       start: "16:00",
       end: "16:45",
-      title:
-        "TBA",
+      title: "TBA",
       type: "policy",
       speaker: "TBA",
     },
     {
       start: "17:00",
       end: "17:45",
-      title:
-        "TBA",
+      title: "TBA",
       type: "tech",
       speaker: "TBA",
     },
     {
       start: "17:00",
       end: "17:45",
-      title:
-        "TBA",
+      title: "TBA",
       type: "policy",
       speaker: "TBA",
     },
@@ -177,7 +167,7 @@ const calculateEventStyle = (start: string, end: string) => {
     (TIME_SLOT_HEIGHT * times.length);
   const height =
     ((endMinutes - startMinutes) / totalMinutes) *
-    (TIME_SLOT_HEIGHT * times.length) +
+      (TIME_SLOT_HEIGHT * times.length) +
     TIME_LINE_HEIGHT;
 
   return { top: `${top}px`, height: `${height}px`, zIndex: top };
