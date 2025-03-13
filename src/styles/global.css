@@ -1,30 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import "tailwindcss";
 
 @theme {
-    --font-open-sans: "Open Sans", sans-serif;
-    --color-white-smoke: #f5f5f5;
+  --font-open-sans: "Open Sans", sans-serif;
+  --color-white-smoke: #f5f5f5;
 
-    --color-tech-fill: #360E12;
-    --color-tech-stroke: #711B38;
+  --color-attack-red: #ff0030;
+  --color-attack-darker-red: #9e0035;
 
-    --color-policy-fill: #0C142F;
-    --color-policy-stroke: #017EFE;
+  --color-defense-blue: #011efe;
+  --color-defense-lighter-blue: #017efe;
+  --color-defense-darker-blue: #1d65ae;
 
-    --color-keynote-fill: #1D1025;
-    --color-keynote-stroke: #752C7B;
+  --color-tech-fill: #360e12;
+  --color-tech-stroke: #711b38;
 
-    --color-neutral-fill: #113711;
-    --color-neutral-stroke: #0C8A19;
+  --color-policy-fill: #0c142f;
+  --color-policy-stroke: #017efe;
+
+  --color-keynote-fill: #1d1025;
+  --color-keynote-stroke: #752c7b;
+
+  --color-neutral-fill: #113711;
+  --color-neutral-stroke: #0c8a19;
 }
 
 :root {
-    color: #f5f5f5;
+  color: #f5f5f5;
 }
 
 .sponzori {
-    color: var(--blue);
-    padding: 20px;
-    font-weight: bold;
-    font-size: 1.5rem;
+  color: var(--blue);
+  padding: 20px;
+  font-weight: bold;
+  font-size: 1.5rem;
 }

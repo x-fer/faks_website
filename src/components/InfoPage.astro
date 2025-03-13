@@ -1,48 +1,49 @@
 ---
 import Footer from "./Footer";
-import RightItem from "@components/info/RightItem.astro";
+import EventActivitiesSummary from "./info/EventActivitiesSummary.astro";
+
 const data = [
   {
     icon: "/icons/Vector1.svg",
     title: "Predavanja",
     text: "Prvi dan konferencije održavat će se predavanja vodećih stručnjaka u kibernetičkoj sigurnosti, a podijeljena su u dvije trake: policy i tech.",
-    color: "var(--blue)",
+    color: "var(--color-defense-lighter-blue)",
   },
   {
     icon: "/icons/Vector2.svg",
     title: "CTF",
     text: "Timsko natjecanje u kojem će se u pet kategorija (web, pwn, rev, cry, misc) provjeriti velik broj sigurnosnih vještina.",
-    color: "var(--red)",
+    color: "var(--color-attack-red)",
   },
   {
     icon: "/icons/Vector3.svg",
     title: "Mingle",
     text: "Neformalno druženje uz kavu i grickalice – prilika za umrežavanje s kolegama i stručnjacima.",
-    color: "var(--blue)",
+    color: "var(--color-defense-lighter-blue)",
   },
   {
     icon: "/icons/Vector4.svg",
     title: "Flash talks",
     text: "Timsko natjecanje u kojem će se u pet kategorija (web, pwn, rev, cry, misc) provjeriti velik broj sigurnosnih vještina.",
-    color: "var(--red)",
+    color: "var(--color-attack-red)",
   },
   {
     icon: "/icons/Vector5.svg",
     title: "Panel rasprava",
     text: "Eksperti iz industrije raspravljaju o najnovijim trendovima, prijetnjama i budućnosti sigurnosti.",
-    color: "var(--blue)",
+    color: "var(--color-defense-lighter-blue)",
   },
 ];
 ---
 
-<div class="max-w-2/3 mx-auto flex flex-col pt-20 gap-10">
-  <div class="flex justify-center items-center h-1/2">
+<div class="flex w-full flex-col gap-10 px-5 pt-20 md:mx-auto md:max-w-2/3">
+  <div class="flex h-1/2 items-center justify-center">
     <img src="/FAKS.svg" class="w-1/2" />
   </div>
   <div class="flex flex-col gap-15">
     <div>
-      <div class="font-bold text-[#F5F5F5] text-3xl">OPĆE INFORMACIJE</div>
-      <div class="text-[#D2D2D2] text-lg">
+      <div class="text-3xl font-bold text-[#F5F5F5]">OPĆE INFORMACIJE</div>
+      <div class="text-lg text-[#D2D2D2]">
         <p class="mt-4">
           FER-ova akademska konferencija o sigurnosti (FAKS) projekt je koji
           okuplja studente, stručnjake i entuzijaste s ciljem edukacije i
@@ -68,10 +69,10 @@ const data = [
         </p>
       </div>
     </div>
-    <div class="grid grid-cols-5 gap-4">
+    <div class="flex flex-col gap-8 xl:flex-row xl:gap-4">
       {
         data.map((item) => (
-          <RightItem
+          <EventActivitiesSummary
             icon={item.icon}
             title={item.title}
             text={item.text}
@@ -81,25 +82,25 @@ const data = [
       }
     </div>
     <div class="flex flex-col gap-4">
-      <div class="font-bold text-[#F5F5F5] text-xl">PREDAVANJA</div>
-      <div class="text-[#D2D2D2] text-lg">
+      <div class="text-xl font-bold text-[#F5F5F5]">PREDAVANJA</div>
+      <div class="text-lg text-[#D2D2D2]">
         Prvi dan konferencije održavat će se predavanja vodećih stručnjaka u
         kibernetičkoj sigurnosti, a podijeljena su u dvije trake:
       </div>
-      <div class="flex flex-row gap-4 justify-between">
-        <div class="text-[#D2D2D2] text-lg">
+      <div class="flex flex-row justify-between gap-4">
+        <div class="text-lg text-[#D2D2D2]">
           🔵 TECH: tehnička rješenja, obrana sustava, analize napada
         </div>
-        <div class="text-[#D2D2D2] text-lg">
+        <div class="text-lg text-[#D2D2D2]">
           🔴 POLICY: regulativa, strategije i etička pitanja kibernetičke
           sigurnosti
         </div>
       </div>
     </div>
     <div>
-      <div class="font-bold text-[#F5F5F5] text-xl">CTF NATJECANJE</div>
+      <div class="text-xl font-bold text-[#F5F5F5]">CTF NATJECANJE</div>
       <div>
-        <p class="text-[#D2D2D2] text-lg">
+        <p class="text-lg text-[#D2D2D2]">
           <a
             href="https://en.wikipedia.org/wiki/Capture_the_flag_(cybersecurity)"
             class="text-[#017EFE]">Capture the flag natjecanje</a
@@ -112,7 +113,7 @@ const data = [
           zaštićene sustave, probijati šifre ili analizirati softver kako bi pronašli
           skrivene informacije.
         </p>
-        <br /><p class="text-[#D2D2D2] text-lg">
+        <br /><p class="text-lg text-[#D2D2D2]">
           U sklopu konferencije održat će se Jeopardy-style CTF natjecanje 8.
           lipnja, a kao preliminarno natjecanje održavamo dvije runde online
           kvalifikacija od 31.3. do 14.4. Prva runda bit će otvorena oba tjedna,
@@ -129,44 +130,44 @@ const data = [
       </div>
     </div>
     <div class="flex flex-col gap-4">
-      <div class="font-bold text-[#F5F5F5] text-xl">
+      <div class="text-xl font-bold text-[#F5F5F5]">
         MINGLE CTF (CAPTURE THE FLASK)
       </div>
-      <div class="text-[#BDFF02] text-lg">
+      <div class="text-lg text-[#BDFF02]">
         Neformalno druženje uz kavu i grickalice – prilika za umrežavanje s
         kolegama i stručnjacima.
       </div>
     </div>
     <div class="flex flex-col gap-4">
-      <div class="font-bold text-[#F5F5F5] text-xl">FLASH TALKS</div>
-      <div class="text-[#BDFF02] text-lg">
+      <div class="text-xl font-bold text-[#F5F5F5]">FLASH TALKS</div>
+      <div class="text-lg text-[#BDFF02]">
         Kratke, dinamične prezentacije na aktualne teme. Prilika za dijeljenje
         znanja i inspiraciju!
       </div>
     </div>
     <div class="flex flex-col gap-4">
-      <div class="font-bold text-[#F5F5F5] text-xl">PANEL RASPRAVA</div>
-      <div class="text-[#BDFF02] text-lg">
+      <div class="text-xl font-bold text-[#F5F5F5]">PANEL RASPRAVA</div>
+      <div class="text-lg text-[#BDFF02]">
         Eksperti iz industrije raspravljaju o najnovijim trendovima, prijetnjama
         i budućnosti sigurnosti.
       </div>
     </div>
     <div class="flex flex-col gap-4">
-      <div class="font-bold text-[#F5F5F5] text-xl">RASPORED</div>
-      <div class="text-[#BDFF02] text-lg">
+      <div class="text-xl font-bold text-[#F5F5F5]">RASPORED</div>
+      <div class="text-lg text-[#BDFF02]">
         Dostupan na stranici Raspored (make this a link and add link icon)
       </div>
     </div>
   </div>
   <div class="flex flex-col gap-4">
-    <div class="font-bold text-[#F5F5F5] text-3xl">ORGANIZACIJA</div>
-    <div class="text-[#D2D2D2] text-lg">
+    <div class="text-3xl font-bold text-[#F5F5F5]">ORGANIZACIJA</div>
+    <div class="text-lg text-[#D2D2D2]">
       <p>Konferenciju organiziraju studenti FER-a pod vodstvom profesora.</p>
       <br />
       <p>
         Koordinatori:
         <br />
-        <ul class="list-disc list-inside">
+        <ul class="list-inside list-disc">
           <li>Prof. dr. sc. Marin Vuković – marin.vukovic@fer.unizg.hr</li>
           <li>FER organizacijski tim – faks@fer.hr</li>
         </ul>
@@ -176,11 +177,11 @@ const data = [
     </div>
     <div class="flex flex-col gap-8">
       <div class="flex flex-col gap-4">
-        <div class="font-bold text-[#F5F5F5] text-3xl">
+        <div class="text-3xl font-bold text-[#F5F5F5]">
           ERSTE CYBER GUARDIAN
         </div>
         <div class="grid grid-cols-3">
-          <div class="text-[#D2D2D2] text-lg col-span-2">
+          <div class="col-span-2 text-lg text-[#D2D2D2]">
             https://www.erstebank.hr/hr/sigurnost/erste-cyber-guardian - link
             povezat sa logom cyberguardiana Erste Cyber Guardian inicijativa je
             Erste Banke Hrvatska usmjerena na jačanje kibernetičke sigurnosti,
@@ -192,19 +193,19 @@ const data = [
             pomaže u organizaciji edukacijskih sadržaja i natjecanja, čime
             doprinosi razvoju sigurnosne zajednice u Hrvatskoj.
           </div>
-          <div class="flex flex-col justify-around items-center">
-            <div class="flex flex-row justify-center items-center">
+          <div class="flex flex-col items-center justify-around">
+            <div class="flex flex-row items-center justify-center">
               <img src="/sponsors/erste1.svg" />
             </div>
-            <div class="flex flex-row justify-center items-center">
+            <div class="flex flex-row items-center justify-center">
               <img src="/sponsors/erste2.svg" />
             </div>
           </div>
         </div>
       </div>
       <div class="flex flex-col gap-4">
-        <div class="font-bold text-[#F5F5F5] text-3xl">DIGITALNA EUROPA</div>
-        <div class="text-[#D2D2D2] text-lg col-span-2">
+        <div class="text-3xl font-bold text-[#F5F5F5]">DIGITALNA EUROPA</div>
+        <div class="col-span-2 text-lg text-[#D2D2D2]">
           https://eufondovi.gov.hr/programi-unije-2021-2027/digitalna-europa/
           <br />
           Digitalna Europa program je Europske unije koji financira projekte usmjerene
@@ -216,18 +217,18 @@ const data = [
         </div>
       </div>
       <div class="flex flex-col gap-4">
-        <div class="font-bold text-[#F5F5F5] text-3xl">SPONZORI</div>
+        <div class="text-3xl font-bold text-[#F5F5F5]">SPONZORI</div>
         <div class="grid grid-cols-3 grid-rows-2">
-          <div class="flex flex-row justify-center items-center">
+          <div class="flex flex-row items-center justify-center">
             <img src="/sponsors/fer.svg" />
           </div>
-          <div class="flex flex-row justify-center items-center">
+          <div class="flex flex-row items-center justify-center">
             <img src="/sponsors/fer.svg" />
           </div>
-          <div class="flex flex-row justify-center items-center">
+          <div class="flex flex-row items-center justify-center">
             <img src="/sponsors/fer.svg" />
           </div>
-          <div class="flex flex-row justify-center items-center">
+          <div class="flex flex-row items-center justify-center">
             <img src="/sponsors/fer.svg" />
           </div>
         </div>

@@ -1,37 +1,39 @@
 ---
 const links = [
-    {
-        title: "info",
-        link: "/info",
-    },
-    {
-        title: "raspored",
-        link: "/raspored",
-    },
-    {
-        title: "predavači",
-        link: "/predavaci",
-    },
-    {
-        title: "obavijesti",
-        link: "/obavijesti",
-    },
-    {
-        title: "CTF",
-        link: "/ctf",
-    },
+  {
+    title: "info",
+    link: "/info",
+  },
+  {
+    title: "raspored",
+    link: "/raspored",
+  },
+  {
+    title: "predavači",
+    link: "/predavaci",
+  },
+  {
+    title: "obavijesti",
+    link: "/obavijesti",
+  },
+  {
+    title: "CTF",
+    link: "/ctf",
+  },
 ];
 
 import "@styles/global.css";
 ---
 
-<div class="hidden xl:flex relative w-full py-5 bg-linear-to-b from-black to-transparent">
-    <div
-        class="container flex items-center mx-auto text-[#AAAAAA] text-xl font-semibold gap-24 font-open-sans z-10"
-    >
-        <a href="/">
-            <img class="" src="/logo.svg" alt="logo" />
-        </a>
-        {links.map((link) => <a href={link.link}>{link.title}</a>)}
-    </div>
+<div
+  class="relative hidden w-full bg-linear-to-b from-black to-transparent py-5 xl:flex"
+>
+  <div
+    class="font-open-sans z-10 container mx-auto flex items-center gap-24 text-xl font-semibold text-[#AAAAAA]"
+  >
+    <a href="/">
+      <img class="" src="/logo.svg" alt="logo" />
+    </a>
+    {links.map((link) => <a href={link.link}>{link.title}</a>)}
+  </div>
 </div>

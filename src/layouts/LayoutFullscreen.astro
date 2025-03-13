@@ -4,29 +4,30 @@ import Header from "@components/Header.astro";
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>FAKS - Ferova akademska konferencija o sigurnosti</title>
-	</head>
-	<body class="relative overflow-hidden">
-		<Header />
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>FAKS - Ferova akademska konferencija o sigurnosti</title>
+  </head>
+  <body class="relative overflow-hidden">
+    <Header />
+    <slot />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		font-family: "Nutino Sans", Inter, Roboto, "Helvetica Neue",
-			"Arial Nova", "Nimbus Sans", Arial, sans-serif;
-		width: 100%;
-		background-color: rgba(0, 0, 0, 1);
-		background-image: url("/public/background.svg");
-		background-size: cover;
-		background-position: center;
-		background-repeat: repeat-y;
-	}
+  html,
+  body {
+    font-family:
+      "Nutino Sans", Inter, Roboto, "Helvetica Neue", "Arial Nova",
+      "Nimbus Sans", Arial, sans-serif;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 1);
+    background-image: url("/bg-white.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+  }
 </style>
