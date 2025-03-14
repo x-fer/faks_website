@@ -1,4 +1,5 @@
 ---
+import { Menu } from "lucide-react";
 const links = [
   {
     title: "info",
@@ -25,15 +26,21 @@ const links = [
 import "@styles/global.css";
 ---
 
-<div
-  class="relative hidden w-full bg-linear-to-b from-black to-transparent py-5 xl:flex"
->
-  <div
-    class="font-open-sans z-10 container mx-auto flex items-center gap-24 text-xl font-semibold text-[#AAAAAA]"
-  >
+<div class="relative w-full bg-linear-to-b from-black to-transparent md:py-5">
+  <div class="z-10 mx-10 flex items-center justify-between md:hidden">
     <a href="/">
-      <img class="" src="/logo.svg" alt="logo" />
+      <img class="size-20" src="/logo.svg" alt="logo" />
     </a>
+    <Menu size="30" className="" />
+  </div>
+</div>
+<div
+  class="font-open-sans z-10 container mx-auto hidden items-center gap-8 text-xl font-semibold text-[#AAAAAA] md:flex xl:gap-24"
+>
+  <a href="/">
+    <img class="size-30" src="/logo.svg" alt="logo" />
+  </a>
+  <div class="flex gap-8 xl:gap-24">
     {links.map((link) => <a href={link.link}>{link.title}</a>)}
   </div>
 </div>
