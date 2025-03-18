@@ -146,9 +146,9 @@ const events: EventInfo[][] = [
     {
       start: "11:30",
       end: "14:30",
-      title: "day 2 baaababbayy",
+      title: "TBA",
       type: "keynote",
-      speaker: "Ludomir ludic",
+      speaker: "TBA",
     },
   ],
 ];
@@ -167,7 +167,7 @@ const calculateEventStyle = (start: string, end: string) => {
     (TIME_SLOT_HEIGHT * times.length);
   const height =
     ((endMinutes - startMinutes) / totalMinutes) *
-      (TIME_SLOT_HEIGHT * times.length) +
+    (TIME_SLOT_HEIGHT * times.length) +
     TIME_LINE_HEIGHT;
 
   return { top: `${top}px`, height: `${height}px`, zIndex: top };

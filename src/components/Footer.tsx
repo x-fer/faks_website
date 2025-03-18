@@ -1,3 +1,5 @@
+import { cn } from "@src/assets/lib/utils";
+
 type LinkInfo = {
   link: string;
   linkText: string;
@@ -52,12 +54,12 @@ const LinksSection = ({ title, links }: LinksSectionProps) => (
 );
 
 const exploreLinks: LinkInfo[] = [
-  { link: "#predavanja", linkText: "predavanja" },
-  { link: "#ctf-natjecanje", linkText: "CTF natjecanje" },
-  { link: "#flash-talks", linkText: "flash talks" },
-  { link: "#panel-rasprave", linkText: "panel rasprave" },
-  { link: "#mingle", linkText: "mingle" },
-  { link: "#faq", linkText: "FAQ" },
+  { link: "/info/#predavanja", linkText: "predavanja" },
+  { link: "/info/#ctf-natjecanje", linkText: "CTF natjecanje" },
+  { link: "/info/#flash-talks", linkText: "flash talks" },
+  { link: "/info/#panel-rasprave", linkText: "panel rasprave" },
+  { link: "/info/#mingle", linkText: "mingle" },
+  //{ link: "#faq", linkText: "FAQ" },
 ];
 
 const socialLinks: LinkInfo[] = [
@@ -69,13 +71,17 @@ const socialLinks: LinkInfo[] = [
 ];
 
 const aboutLinks: LinkInfo[] = [
-  { link: "#organizacija", linkText: "organizacija" },
-  { link: "#erste-cyber-guardian", linkText: "Erste Cyber guardian" },
-  { link: "#fer", linkText: "FER" },
+  { link: "/info/#organizacija", linkText: "organizacija" },
+  { link: "/info/#erste-cyber-guardian", linkText: "Erste Cyber guardian" },
+  { link: "https://www.fer.unizg.hr/", linkText: "FER" },
 ];
 
-const Footer = () => (
-  <div className="flex w-full flex-col items-center justify-between gap-10">
+type Props = {
+  className?: string
+}
+
+const Footer = ({ className }: Props) => (
+  <div className={cn("flex w-full flex-col items-center justify-between gap-10", className)}>
     <div className="flex w-full flex-col items-center gap-5 md:flex-row md:items-start md:justify-between">
       <img
         src="/faks_small.svg"
@@ -84,12 +90,12 @@ const Footer = () => (
       />
 
       <ContactInfo
-        email="faks@fer.hr"
+        email="faks.konferencija@fer.hr"
         telephoneNumber="+385 1 6129 999"
         address="Unska 3, Zagreb"
       />
-      <LinksSection title="Istrazite" links={exploreLinks} />
-      <LinksSection title="Povezite se s nama" links={socialLinks} />
+      <LinksSection title="Instražite" links={exploreLinks} />
+      <LinksSection title="Povežite se s nama" links={socialLinks} />
       <LinksSection title="O nama i partnerima" links={aboutLinks} />
     </div>
 

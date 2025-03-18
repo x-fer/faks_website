@@ -1,6 +1,7 @@
 ---
 import Footer from "./Footer";
 import EventActivitiesSummary from "./info/EventActivitiesSummary.astro";
+import { ExternalLink } from "lucide-react";
 
 const data = [
   {
@@ -81,7 +82,7 @@ const data = [
         ))
       }
     </div>
-    <div class="flex flex-col gap-4">
+    <div class="space-y-4" id="predavanja">
       <div class="text-xl font-bold text-[#F5F5F5]">PREDAVANJA</div>
       <div class="text-lg text-[#D2D2D2]">
         Prvi dan konferencije održavat će se predavanja vodećih stručnjaka u
@@ -97,7 +98,7 @@ const data = [
         </div>
       </div>
     </div>
-    <div>
+    <div id="ctf-natjecanje">
       <div class="text-xl font-bold text-[#F5F5F5]">CTF NATJECANJE</div>
       <div>
         <p class="text-lg text-[#D2D2D2]">
@@ -129,37 +130,47 @@ const data = [
         </p>
       </div>
     </div>
-    <div class="flex flex-col gap-4">
+
+    <div class="flex flex-col gap-4" id="mingle">
       <div class="text-xl font-bold text-[#F5F5F5]">
         MINGLE CTF (CAPTURE THE FLASK)
       </div>
-      <div class="text-lg text-[#BDFF02]">
+      <div class="text-lg">
         Neformalno druženje uz kavu i grickalice – prilika za umrežavanje s
         kolegama i stručnjacima.
       </div>
     </div>
-    <div class="flex flex-col gap-4">
+
+    <div class="space-y-4" id="flash-talks">
       <div class="text-xl font-bold text-[#F5F5F5]">FLASH TALKS</div>
-      <div class="text-lg text-[#BDFF02]">
+      <div class="text-lg">
         Kratke, dinamične prezentacije na aktualne teme. Prilika za dijeljenje
         znanja i inspiraciju!
       </div>
     </div>
-    <div class="flex flex-col gap-4">
+
+    <div class="space-y-4" id="panel-rasprave">
       <div class="text-xl font-bold text-[#F5F5F5]">PANEL RASPRAVA</div>
-      <div class="text-lg text-[#BDFF02]">
+      <div class="text-lg">
         Eksperti iz industrije raspravljaju o najnovijim trendovima, prijetnjama
         i budućnosti sigurnosti.
       </div>
     </div>
+
     <div class="flex flex-col gap-4">
       <div class="text-xl font-bold text-[#F5F5F5]">RASPORED</div>
-      <div class="text-lg text-[#BDFF02]">
-        Dostupan na stranici Raspored (make this a link and add link icon)
+      <div class="flex gap-2 text-lg">
+        Dostupan na stranici <a
+          href="/raspored"
+          class="text-attack-darker-red hover:text-attack-red flex items-center gap-2"
+        >
+          <p>Raspored</p>
+          <ExternalLink />
+        </a>
       </div>
     </div>
   </div>
-  <div class="flex flex-col gap-4">
+  <div class="space-y-4" id="organizacija">
     <div class="text-3xl font-bold text-[#F5F5F5]">ORGANIZACIJA</div>
     <div class="text-lg text-[#D2D2D2]">
       <p>Konferenciju organiziraju studenti FER-a pod vodstvom profesora.</p>
@@ -168,34 +179,46 @@ const data = [
         Koordinatori:
         <br />
         <ul class="list-inside list-disc">
-          <li>Prof. dr. sc. Marin Vuković – marin.vukovic@fer.unizg.hr</li>
-          <li>FER organizacijski tim – faks@fer.hr</li>
+          <li>
+            Prof. dr. sc. Marin Vuković – <a
+              href="mailto:marin.vukovic@fer.unizg.hr"
+              >marin.vukovic@fer.unizg.hr</a
+            >
+          </li>
+          <li>
+            FER organizacijski tim – <a href="mailto:faks.konferencija@fer.hr"
+              >faks.konferencija@fer.hr</a
+            >
+          </li>
         </ul>
         <br />
         <p>Možete nas kontaktirati i putem društvenih mreža!</p>
       </p>
     </div>
-    <div class="flex flex-col gap-8">
+    <div class="flex flex-col gap-8" id="erste-cyber-guardian">
       <div class="flex flex-col gap-4">
         <div class="text-3xl font-bold text-[#F5F5F5]">
           ERSTE CYBER GUARDIAN
         </div>
         <div class="grid grid-cols-3">
           <div class="col-span-2 text-lg text-[#D2D2D2]">
-            https://www.erstebank.hr/hr/sigurnost/erste-cyber-guardian - link
-            povezat sa logom cyberguardiana Erste Cyber Guardian inicijativa je
-            Erste Banke Hrvatska usmjerena na jačanje kibernetičke sigurnosti,
-            edukaciju i podizanje svijesti o cyber prijetnjama. Program
-            uključuje različite aktivnosti poput radionica, konferencija i
-            natjecanja, a cilj mu je osposobiti buduće stručnjake i korisnike za
-            prepoznavanje i suzbijanje cyber prijetnji. U sklopu inicijative
-            Erste Cyber Guardian podržava događaje poput FAKS konferencije, gdje
-            pomaže u organizaciji edukacijskih sadržaja i natjecanja, čime
-            doprinosi razvoju sigurnosne zajednice u Hrvatskoj.
+            Erste Cyber Guardian inicijativa je Erste Banke Hrvatska usmjerena
+            na jačanje kibernetičke sigurnosti, edukaciju i podizanje svijesti o
+            cyber prijetnjama. Program uključuje različite aktivnosti poput
+            radionica, konferencija i natjecanja, a cilj mu je osposobiti buduće
+            stručnjake i korisnike za prepoznavanje i suzbijanje cyber
+            prijetnji. U sklopu inicijative Erste Cyber Guardian podržava
+            događaje poput FAKS konferencije, gdje pomaže u organizaciji
+            edukacijskih sadržaja i natjecanja, čime doprinosi razvoju
+            sigurnosne zajednice u Hrvatskoj.
           </div>
           <div class="flex flex-col items-center justify-around">
             <div class="flex flex-row items-center justify-center">
-              <img src="/sponsors/erste1.svg" />
+              <a
+                href="https://www.erstebank.hr/hr/sigurnost/erste-cyber-guardian"
+              >
+                <img src="/sponsors/erste1.svg" />
+              </a>
             </div>
             <div class="flex flex-row items-center justify-center">
               <img src="/sponsors/erste2.svg" />
@@ -218,22 +241,11 @@ const data = [
       </div>
       <div class="flex flex-col gap-4">
         <div class="text-3xl font-bold text-[#F5F5F5]">SPONZORI</div>
-        <div class="grid grid-cols-3 grid-rows-2">
-          <div class="flex flex-row items-center justify-center">
-            <img src="/sponsors/fer.svg" />
-          </div>
-          <div class="flex flex-row items-center justify-center">
-            <img src="/sponsors/fer.svg" />
-          </div>
-          <div class="flex flex-row items-center justify-center">
-            <img src="/sponsors/fer.svg" />
-          </div>
-          <div class="flex flex-row items-center justify-center">
-            <img src="/sponsors/fer.svg" />
-          </div>
+        <div class="flex flex-wrap">
+          <img src="/sponsors/fer.svg" />
         </div>
       </div>
     </div>
   </div>
-  <Footer />
+  <Footer className="mt-20" />
 </div>
