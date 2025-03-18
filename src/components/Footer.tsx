@@ -77,11 +77,16 @@ const aboutLinks: LinkInfo[] = [
 ];
 
 type Props = {
-  className?: string
-}
+  className?: string;
+};
 
 const Footer = ({ className }: Props) => (
-  <div className={cn("flex w-full flex-col items-center justify-between gap-10", className)}>
+  <div
+    className={cn(
+      "flex w-full flex-col items-center justify-between gap-10",
+      className,
+    )}
+  >
     <div className="flex w-full flex-col items-center gap-5 md:flex-row md:items-start md:justify-between">
       <img
         src="/faks_small.svg"

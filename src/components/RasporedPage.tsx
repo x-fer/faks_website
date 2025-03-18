@@ -167,7 +167,7 @@ const calculateEventStyle = (start: string, end: string) => {
     (TIME_SLOT_HEIGHT * times.length);
   const height =
     ((endMinutes - startMinutes) / totalMinutes) *
-    (TIME_SLOT_HEIGHT * times.length) +
+      (TIME_SLOT_HEIGHT * times.length) +
     TIME_LINE_HEIGHT;
 
   return { top: `${top}px`, height: `${height}px`, zIndex: top };
