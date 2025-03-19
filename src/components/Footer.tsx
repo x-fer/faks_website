@@ -22,16 +22,21 @@ const ContactInfo = (props: ContactInfoProps) => (
       Kontaktirajte nas
     </div>
     <div className="flex flex-col items-center gap-2 md:items-start">
-      <a href={`mailto:${props.email}`} className="text-[#E0E0E0]">
+      <a
+        href={`mailto:${props.email}`}
+        className="hover:text-attack-darker-red text-[#E0E0E0]"
+      >
         email: {props.email}
       </a>
       <a
         href={`tel:${props.telephoneNumber.replace(" ", "")}`}
-        className="text-[#E0E0E0]"
+        className="hover:text-attack-darker-red text-[#E0E0E0]"
       >
         telefon: {props.telephoneNumber}
       </a>
-      <div className="text-[#E0E0E0]">adresa: {props.address}</div>
+      <div className="hover:text-attack-darker-red text-[#E0E0E0]">
+        adresa: {props.address}
+      </div>
     </div>
   </div>
 );
@@ -44,7 +49,10 @@ const LinksSection = ({ title, links }: LinksSectionProps) => (
     <ul className="flex flex-col items-center gap-2 md:items-start">
       {links.map(({ link, linkText }) => (
         <li>
-          <a className="text-[#E0E0E0]" href={link}>
+          <a
+            className="hover:text-attack-darker-red text-[#E0E0E0]"
+            href={link}
+          >
             {linkText}
           </a>
         </li>
@@ -63,11 +71,23 @@ const exploreLinks: LinkInfo[] = [
 ];
 
 const socialLinks: LinkInfo[] = [
-  { link: "#linkedin", linkText: "linkedin" },
-  { link: "#facebook", linkText: "facebook" },
-  { link: "#instagram", linkText: "instagram" },
-  { link: "#tiktok", linkText: "tiktok" },
-  { link: "#bluesky", linkText: "bluesky" },
+  {
+    link: "https://www.linkedin.com/company/fakskonferencija",
+    linkText: "linkedin",
+  },
+  { link: "https://www.facebook.com/share/19gyUXJ8fJ/", linkText: "facebook" },
+  {
+    link: "https://www.instagram.com/faks.konferencija",
+    linkText: "instagram",
+  },
+  {
+    link: "https://www.tiktok.com/@faks_konferencija?lang=en",
+    linkText: "tiktok",
+  },
+  {
+    link: "https://x.com/FAKS_Konfa?t=Xrfi2GZYUaNJayfSgIs-KQ&s=09",
+    linkText: "Twitter (X)",
+  },
 ];
 
 const aboutLinks: LinkInfo[] = [

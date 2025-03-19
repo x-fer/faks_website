@@ -24,7 +24,7 @@ export default function ObavijestiPage() {
     <div className="mx-auto flex min-h-screen flex-col justify-between space-y-10 pb-10 md:max-w-2/3">
       <div className="">
         {NEWS.map((newsInfo) => (
-          <div className="font-open-sans space-y-4 rounded-xl border-2 border-white bg-black p-10">
+          <div className="font-open-sans text-white-smoke space-y-4 rounded-xl border-2 border-white bg-black p-10">
             <h1 className="text-2xl">{newsInfo.title}</h1>
             <p className="text-lg">{newsInfo.text}</p>
             <p className="text-lg font-semibold text-gray-500">
