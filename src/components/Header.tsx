@@ -22,7 +22,7 @@ export default function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState<boolean>(false);
 
   return (
-    <div className="relative w-full bg-linear-to-b from-black to-transparent md:py-5">
+    <div className="w-full bg-linear-to-b from-black to-transparent md:py-5">
       <div className="z-10 mx-10 flex items-center justify-between md:hidden">
         <a href="/">
           <img className="size-20" src="/logo.svg" alt="logo" />
