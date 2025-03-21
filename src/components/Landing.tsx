@@ -42,7 +42,7 @@ export default function Landing() {
         </div>
         <a
           href="/info"
-          className="inset-shadow-attack-red/20 border-attack-darker-red font-open-sans w-min rounded-md border-2 bg-black px-12 py-2 text-lg font-semibold text-nowrap text-gray-400 inset-shadow-[0_0_50px_5px]"
+          className="inset-shadow-attack-red/20 border-attack-darker-red font-open-sans w-min rounded-md border-2 bg-black px-12 py-2 text-lg font-semibold text-nowrap text-gray-400 inset-shadow-[0_0_50px_5px] my-8"
         >
           Saznaj više
         </a>

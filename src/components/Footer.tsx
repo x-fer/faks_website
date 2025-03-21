@@ -124,7 +124,7 @@ const Footer = ({ className }: Props) => (
       <LinksSection title="O nama i partnerima" links={aboutLinks} />
     </div>
 
-    <div className="flex items-end justify-center">
+    <div className="flex items-end justify-center mb-8">
       <span className="text-[#8A8A8A]">made with</span>
       <img src="/heart.svg" className="mx-2 inline w-6" />
       <span className="text-[#8A8A8A]">by FER students</span>

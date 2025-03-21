@@ -23,7 +23,7 @@ export default function Header() {
 
   return (
     <div className="w-full bg-linear-to-b from-black to-transparent md:py-5">
-      <div className="z-10 mx-10 flex items-center justify-between md:hidden">
+      <div className="z-1000 mx-10 flex items-center justify-between md:hidden">
         <a href="/">
           <img className="size-20" src="/logo.svg" alt="logo" />
         </a>
@@ -58,7 +58,7 @@ export default function Header() {
 
       <div className="font-open-sans z-10 container mx-auto hidden items-center gap-8 text-xl font-semibold text-[#AAAAAA] md:flex xl:gap-24">
         <a href="/">
-          <img className="size-30" src="/logo.svg" alt="logo" />
+          <img className="size-20" src="/logo.svg" alt="logo" />
         </a>
         <div className="flex gap-8 xl:gap-24">
           {links.slice(1).map((link) => (
