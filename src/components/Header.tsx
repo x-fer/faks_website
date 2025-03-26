@@ -11,8 +11,8 @@ import { useState } from "react";
 
 const links = [
   { title: "početna", link: "/" },
-  { title: "info", link: "/info" },
   { title: "raspored", link: "/raspored" },
+  { title: "info", link: "/info" },
   { title: "predavači", link: "/predavaci" },
   { title: "obavijesti", link: "/obavijesti" },
   { title: "CTF", link: "/ctf" },
@@ -62,7 +62,11 @@ export default function Header() {
         </a>
         <div className="flex gap-8 xl:gap-24">
           {links.slice(1).map((link) => (
-            <a key={link.title} href={link.link}>
+            <a
+              key={link.title}
+              href={link.link}
+              className="hover:text-white-smoke transition-colors"
+            >
               {link.title}
             </a>
           ))}

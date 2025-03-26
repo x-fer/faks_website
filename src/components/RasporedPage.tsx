@@ -1,7 +1,7 @@
 import "@styles/global.css";
 import TimeSlotEntry from "./raspored/TimeSlotEntry";
 import Footer from "./Footer";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { cn } from "@src/assets/lib/utils";
 
 const times: string[] = [];
@@ -188,7 +188,7 @@ const DaySelectButton = ({
   return (
     <button
       className={cn(
-        "mx-auto flex w-full cursor-pointer items-end justify-center border-2 py-3 text-center uppercase inset-shadow-[0_0_50px_5px] md:border-3",
+        "mx-auto flex w-full cursor-pointer items-end justify-center border-3 py-3 text-center uppercase inset-shadow-[0_0_50px_5px] md:border-3",
         isSelected
           ? "border-white-smoke text-white inset-shadow-white/25"
           : "border-l-white-smoke border-gray-400 inset-shadow-none",
@@ -202,7 +202,7 @@ const DaySelectButton = ({
 };
 
 export default function RasporedPage() {
-  const timetableHeight = (19 - 9) * 2 * TIME_SLOT_HEIGHT;
+  const timetableHeight = (END_HOUR - START_HOUR) * 2 * TIME_SLOT_HEIGHT;
   const [dayIndex, setDayIndex] = useState<number>(0);
 
   return (
@@ -212,7 +212,7 @@ export default function RasporedPage() {
           text="1. dan"
           isSelected={dayIndex === 0}
           onClick={() => setDayIndex(0)}
-          className="rounded-l-md border-r-0"
+          className={cn("rounded-l-md border-r-0 md:border-r-0")}
         />
         <DaySelectButton
           text="2. dan"
@@ -254,10 +254,14 @@ export default function RasporedPage() {
               }}
             />
           ))}
-          {events[dayIndex].map((event) => {
+          {events[dayIndex].map((event, i) => {
             const style = calculateEventStyle(event.start, event.end);
             return (
-              <TimeSlotEntry key={event.title} event={event} style={style} />
+              <TimeSlotEntry
+                key={`${event.start}-${event.type}`}
+                event={event}
+                style={style}
+              />
             );
           })}
         </div>
