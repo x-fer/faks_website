@@ -26,9 +26,9 @@ export default function Header() {
   // MOBILE
   return (
     <div className="z-50 w-full bg-linear-to-b from-black to-transparent md:py-5">
-      <div className="z-10 mx-10 flex items-center justify-between md:hidden">
+      <div className="z-10 mx-10 flex items-center justify-between py-8 md:hidden">
         <a href="/">
-          <img className="size-20" src="/logo.svg" alt="logo" />
+          <img className="w-15" src="/main_logo_transparent.png" alt="logo" />
         </a>
         <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger className="md:hidden">
@@ -71,13 +71,13 @@ export default function Header() {
             alt="logo"
           />
         </a>
-        <div className="flex gap-8 xl:gap-24">
+        <div className="flex gap-4 xl:gap-12">
           {links.slice(1).map((link) => (
             <a
               key={link.title}
               href={link.link}
               className={cn(
-                "hover:text-white-smoke flex items-center gap-2 transition-colors",
+                "hover:text-white-smoke flex items-center gap-2 p-5 transition-colors",
                 isActivePage(link.link) && "text-white hover:text-gray-300",
               )}
             >
