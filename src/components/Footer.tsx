@@ -26,16 +26,16 @@ const ContactInfo = (props: ContactInfoProps) => (
         href={`mailto:${props.email}`}
         className="hover:text-attack-darker-red text-[#E0E0E0]"
       >
-        email: {props.email}
+        Email: {props.email}
       </a>
       <a
         href={`tel:${props.telephoneNumber.replace(" ", "")}`}
         className="hover:text-attack-darker-red text-[#E0E0E0]"
       >
-        telefon: {props.telephoneNumber}
+        Telefon: {props.telephoneNumber}
       </a>
       <div className="hover:text-attack-darker-red text-[#E0E0E0]">
-        adresa: {props.address}
+        Adresa: {props.address}
       </div>
     </div>
   </div>
@@ -62,27 +62,27 @@ const LinksSection = ({ title, links }: LinksSectionProps) => (
 );
 
 const exploreLinks: LinkInfo[] = [
-  { link: "/info/#predavanja", linkText: "predavanja" },
+  { link: "/info/#predavanja", linkText: "Predavanja" },
   { link: "/info/#ctf-natjecanje", linkText: "CTF natjecanje" },
-  { link: "/info/#flash-talks", linkText: "flash talks" },
-  { link: "/info/#panel-rasprave", linkText: "panel rasprave" },
-  { link: "/info/#mingle", linkText: "mingle" },
+  { link: "/info/#flash-talks", linkText: "Flash Talks" },
+  { link: "/info/#panel-rasprave", linkText: "Panel Rasprave" },
+  { link: "/info/#mingle", linkText: "Mingle" },
   //{ link: "#faq", linkText: "FAQ" },
 ];
 
 const socialLinks: LinkInfo[] = [
   {
     link: "https://www.linkedin.com/company/fakskonferencija",
-    linkText: "linkedin",
+    linkText: "Linkedin",
   },
-  { link: "https://www.facebook.com/share/19gyUXJ8fJ/", linkText: "facebook" },
+  { link: "https://www.facebook.com/share/19gyUXJ8fJ/", linkText: "Facebook" },
   {
     link: "https://www.instagram.com/faks.konferencija",
-    linkText: "instagram",
+    linkText: "Instagram",
   },
   {
     link: "https://www.tiktok.com/@faks_konferencija?lang=en",
-    linkText: "tiktok",
+    linkText: "Tiktok",
   },
   {
     link: "https://x.com/FAKS_Konfa?t=Xrfi2GZYUaNJayfSgIs-KQ&s=09",
@@ -91,8 +91,8 @@ const socialLinks: LinkInfo[] = [
 ];
 
 const aboutLinks: LinkInfo[] = [
-  { link: "/info/#organizacija", linkText: "organizacija" },
-  { link: "/info/#erste-cyber-guardian", linkText: "Erste Cyber guardian" },
+  { link: "/info/#organizacija", linkText: "Organizacija" },
+  { link: "/info/#erste-cyber-guardian", linkText: "Erste Cyber Guardian" },
   { link: "https://www.fer.unizg.hr/", linkText: "FER" },
 ];
 

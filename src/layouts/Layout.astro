@@ -11,8 +11,8 @@ import Header from "@/components/Header";
     <meta name="generator" content={Astro.generator} />
     <title>FAKS - Ferova akademska konferencija o sigurnosti</title>
   </head>
-  <body>
-    <Header client:load />
+  <body class="flex h-screen flex-col">
+    <Header client:only />
     <slot />
   </body>
 </html>

@@ -206,8 +206,8 @@ export default function RasporedPage() {
   const [dayIndex, setDayIndex] = useState<number>(0);
 
   return (
-    <div className="my-10 flex w-full flex-col gap-10 px-5 md:gap-16 lg:mx-auto xl:w-2/3">
-      <div className="text-md flex w-2/3 self-center rounded-xl bg-black font-semibold text-gray-400 sm:w-1/2 md:text-xl 2xl:w-1/3">
+    <div className="flex w-full flex-col gap-10 px-5 pb-10 md:gap-16 lg:mx-auto xl:w-2/3">
+      <div className="text-md mt-20 flex w-2/3 self-center rounded-xl bg-black font-semibold text-gray-400 sm:w-1/2 md:text-xl 2xl:w-1/3">
         <DaySelectButton
           text="1. dan"
           isSelected={dayIndex === 0}
@@ -221,7 +221,7 @@ export default function RasporedPage() {
           className={cn("rounded-r-md", dayIndex === 0 && "border-l-white")}
         />
       </div>
-      <h1 className="font-open-sans text-center text-3xl uppercase md:text-4xl xl:text-5xl">
+      <h1 className="font-open-sans text-white-smoke text-center text-3xl uppercase md:text-4xl xl:text-5xl">
         raspored za dan {dayIndex === 0 ? "7" : "8"}.6.2025.
       </h1>
       <div

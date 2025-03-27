@@ -37,171 +37,186 @@ const data = [
 ];
 ---
 
-<div class="flex w-full flex-col gap-10 px-5 pt-20 md:mx-auto md:max-w-2/3">
-  <div class="flex h-1/2 items-center justify-center">
-    <img src="/FAKS.svg" class="w-1/2" />
-  </div>
-  <div class="flex flex-col gap-15">
-    <div>
-      <div class="text-3xl font-bold text-[#F5F5F5]">OPĆE INFORMACIJE</div>
+<div class="flex w-full flex-col space-y-20 px-5 pb-10 md:mx-auto md:max-w-2/3">
+  <img src="/FAKS.svg" class="mx-auto mt-20 w-full md:w-2/3 xl:w-1/2" />
+
+  <div id="all-sections" class="space-y-32">
+    <section id="opce-informacije" class="space-y-16">
+      <div id="samo-tekst">
+        <h1 class="text-3xl font-bold text-[#F5F5F5]">OPĆE INFORMACIJE</h1>
+        <div class="text-lg text-[#D2D2D2]">
+          <p class="mt-4">
+            FER-ova akademska konferencija o sigurnosti (FAKS) projekt je koji
+            okuplja studente, stručnjake i entuzijaste s ciljem edukacije i
+            podizanja razine svijesti o kibernetičkoj sigurnosti. Organizirana
+            od strane Fakulteta elektrotehnike i računarstva Sveučilišta u
+            Zagrebu (FER), konferencija je besplatna i otvorena svim
+            zainteresiranima, a posebice akademskoj zajednici. Fokus
+            konferencije je na popularizaciji kibernetičke sigurnosti kroz
+            stvaranje platforme za razmjenu znanja i iskustava među studentima,
+            stručnjacima i organizacijama koji se zanimaju za kibernetičku
+            sigurnost.
+          </p>
+          <br />
+          <p>Događaj traje dva dana i uključuje:</p>
+          <p>✅ Predavanja vodećih stručnjaka</p>
+          <p>✅ Interaktivne radionice</p>
+          <p>✅ CTF natjecanje (Capture the Flag)</p>
+          <br />
+          <p>
+            FAKS sufinancira Europska unija kroz program Digitalna Europa te
+            Erste Banka Hrvatska u sklopu inicijative Erste Cyber Guardian.
+            Dodatnu podršku pružaju partneri iz industrije i akademske zajednice
+            koji prepoznaju važnost razvoja kibernetičke sigurnosti.
+          </p>
+        </div>
+      </div>
+
+      <div
+        id="ikonice-s-teksom"
+        class="flex flex-col gap-8 md:py-20 xl:flex-row xl:gap-4"
+      >
+        {
+          data.map((item) => (
+            <EventActivitiesSummary
+              icon={item.icon}
+              title={item.title}
+              text={item.text}
+              color={item.color}
+            />
+          ))
+        }
+      </div>
+
+      <div class="space-y-4" id="predavanja">
+        <h1 class="text-2xl font-bold text-[#F5F5F5] uppercase">predavanja</h1>
+        <div class="text-lg text-[#D2D2D2]">
+          Prvi dan konferencije održavat će se predavanja vodećih stručnjaka u
+          kibernetičkoj sigurnosti, a podijeljena su u dvije trake:
+        </div>
+        <div class="flex flex-row justify-between gap-4">
+          <div class="text-lg text-[#D2D2D2]">
+            🔵 TECH: tehnička rješenja, obrana sustava, analize napada
+          </div>
+          <div class="text-lg text-[#D2D2D2]">
+            🔴 POLICY: regulativa, strategije i etička pitanja kibernetičke
+            sigurnosti
+          </div>
+        </div>
+      </div>
+
+      <div id="ctf-natjecanje" class="space-y-4 text-[#E0E0E0]">
+        <h1 class="text-2xl font-bold text-[#F5F5F5]">CTF NATJECANJE</h1>
+        <div>
+          <p class="text-lg">
+            <a
+              href="https://en.wikipedia.org/wiki/Capture_the_flag_(cybersecurity)"
+              class="text-[#017EFE] hover:underline"
+              >Capture the flag natjecanje</a
+            > je tip natjecanja u kojemu se ispituju vještine kibernetičke sigurnosti
+            kroz više različitih tipova zadataka. Cilj svakog zadatka je otkriti
+            kratki tekstualni niz, zvan zastavica (eng. flag), od čega i potječe
+            naziv “Uhvati zastavicu” (eng. “Capture the flag”). Zadaci obuhvaćaju
+            područja poput otkrivanja ranjivosti programa, dešifriranja podataka,
+            forenzike, analize mrežnog prometa i reverznog inženjeringa. Sudionici
+            mogu istraživati slabo zaštićene sustave, probijati šifre ili analizirati
+            softver kako bi pronašli skrivene informacije.
+          </p>
+          <br /><p class="text-lg">
+            U sklopu konferencije održat će se Jeopardy-style CTF natjecanje 8.
+            lipnja, a kao preliminarno natjecanje održavamo dvije runde online
+            kvalifikacija od 31.3. do 14.4. Prva runda bit će otvorena oba
+            tjedna, dok će druga runda biti dostupna samo drugi tjedan. Za
+            sudjelovanje na kvalifikacijama potrebno je prijaviti se putem naše
+            web stranice do 16.3. Moguće je prijaviti se samostalno ili u timu
+            do X ljudi. Ukoliko se prijavite samostalno, dodijelit ćemo vas u
+            neki od timova. Sudjelovati mogu samo studenti koji studiraju u
+            Republici Hrvatskoj. Online kvalifikacije održavaju se na našoj
+            platformi LINK. Najbolji natjecatelji bit će pozvani na on-site
+            natjecanje 8. lipnja. Za on-site natjecanje potrebno je donijeti
+            osobno računalo i identifikacijski dokument.
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-4" id="mingle">
+        <h1 class="text-2xl font-bold text-[#F5F5F5]">
+          MINGLE CTF (CAPTURE THE FLASK)
+        </h1>
+        <div class="text-white-smoke text-lg">
+          Neformalno druženje uz kavu i grickalice – prilika za umrežavanje s
+          kolegama i stručnjacima.
+        </div>
+      </div>
+
+      <div class="space-y-4" id="flash-talks">
+        <h1 class="text-2xl font-bold text-[#F5F5F5]">FLASH TALKS</h1>
+        <div class="text-white-smoke text-lg">
+          Kratke, dinamične prezentacije na aktualne teme. Prilika za dijeljenje
+          znanja i inspiraciju!
+        </div>
+      </div>
+
+      <div class="space-y-4 text-[#E0E0E0]" id="panel-rasprave">
+        <h1 class="text-2xl font-bold text-[#F5F5F5]">PANEL RASPRAVA</h1>
+        <div class="text-white-smoke text-lg">
+          Eksperti iz industrije raspravljaju o najnovijim trendovima,
+          prijetnjama i budućnosti sigurnosti.
+        </div>
+      </div>
+
+      <div class="space-y-4 text-[#E0E0E0]" id="raspored">
+        <h1 class="text-white-smoke text-2xl font-bold">RASPORED</h1>
+        <div class="flex gap-2 text-lg">
+          Dostupan na stranici <a
+            href="/raspored"
+            class="text-attack-darker-red hover:text-attack-red flex items-center gap-2"
+          >
+            <p>Raspored</p>
+            <ExternalLink />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-16" id="organizacija">
+      <h1 class="text-3xl font-bold text-[#F5F5F5]">ORGANIZACIJA</h1>
       <div class="text-lg text-[#D2D2D2]">
-        <p class="mt-4">
-          FER-ova akademska konferencija o sigurnosti (FAKS) projekt je koji
-          okuplja studente, stručnjake i entuzijaste s ciljem edukacije i
-          podizanja razine svijesti o kibernetičkoj sigurnosti. Organizirana od
-          strane Fakulteta elektrotehnike i računarstva Sveučilišta u Zagrebu
-          (FER), konferencija je besplatna i otvorena svim zainteresiranima, a
-          posebice akademskoj zajednici. Fokus konferencije je na popularizaciji
-          kibernetičke sigurnosti kroz stvaranje platforme za razmjenu znanja i
-          iskustava među studentima, stručnjacima i organizacijama koji se
-          zanimaju za kubernetičku sigurnost.
-        </p>
-        <br />
-        <p>Događaj traje dva dana i uključuje:</p>
-        <p>✅ Predavanja vodećih stručnjaka</p>
-        <p>✅ Interaktivne radionice</p>
-        <p>✅ CTF natjecanje (Capture the Flag)</p>
+        <p>Konferenciju organiziraju studenti FER-a pod vodstvom profesora.</p>
         <br />
         <p>
-          FAKS sufinancira Europska unija kroz program Digitalna Europa te Erste
-          Banka Hrvatska u sklopu inicijative Erste Cyber Guardian. Dodatnu
-          podršku pružaju partneri iz industrije i akademske zajednice koji
-          prepoznaju važnost razvoja kibernetičke sigurnosti.
+          Koordinatori:
+          <br />
+          <ul class="list-inside list-disc">
+            <li>
+              Prof. dr. sc. Marin Vuković – <a
+                href="mailto:marin.vukovic@fer.unizg.hr"
+                >marin.vukovic@fer.unizg.hr</a
+              >
+            </li>
+            <li>
+              FER organizacijski tim – <a href="mailto:faks.konferencija@fer.hr"
+                >faks.konferencija@fer.hr</a
+              >
+            </li>
+          </ul>
+          <br />
+          <p>Možete nas kontaktirati i putem društvenih mreža!</p>
         </p>
       </div>
-    </div>
-    <div class="flex flex-col gap-8 xl:flex-row xl:gap-4">
-      {
-        data.map((item) => (
-          <EventActivitiesSummary
-            icon={item.icon}
-            title={item.title}
-            text={item.text}
-            color={item.color}
-          />
-        ))
-      }
-    </div>
-    <div class="space-y-4" id="predavanja">
-      <div class="text-xl font-bold text-[#F5F5F5]">PREDAVANJA</div>
-      <div class="text-lg text-[#D2D2D2]">
-        Prvi dan konferencije održavat će se predavanja vodećih stručnjaka u
-        kibernetičkoj sigurnosti, a podijeljena su u dvije trake:
-      </div>
-      <div class="flex flex-row justify-between gap-4">
-        <div class="text-lg text-[#D2D2D2]">
-          🔵 TECH: tehnička rješenja, obrana sustava, analize napada
-        </div>
-        <div class="text-lg text-[#D2D2D2]">
-          🔴 POLICY: regulativa, strategije i etička pitanja kibernetičke
-          sigurnosti
-        </div>
-      </div>
-    </div>
-    <div id="ctf-natjecanje">
-      <div class="text-xl font-bold text-[#F5F5F5]">CTF NATJECANJE</div>
-      <div>
-        <p class="text-lg text-[#D2D2D2]">
-          <a
-            href="https://en.wikipedia.org/wiki/Capture_the_flag_(cybersecurity)"
-            class="text-[#017EFE]">Capture the flag natjecanje</a
-          > je tip natjecanja u kojemu se ispituju vještine kibernetičke sigurnosti
-          kroz više različitih tipova zadataka. Cilj svakog zadatka je otkriti kratki
-          tekstualni niz, zvan zastavica (eng. flag), od čega i potječe naziv “Uhvati
-          zastavicu” (eng. “Capture the flag”). Zadaci obuhvaćaju područja poput
-          otkrivanja ranjivosti programa, dešifriranja podataka, forenzike, analize
-          mrežnog prometa i reverznog inženjeringa. Sudionici mogu istraživati slabo
-          zaštićene sustave, probijati šifre ili analizirati softver kako bi pronašli
-          skrivene informacije.
-        </p>
-        <br /><p class="text-lg text-[#D2D2D2]">
-          U sklopu konferencije održat će se Jeopardy-style CTF natjecanje 8.
-          lipnja, a kao preliminarno natjecanje održavamo dvije runde online
-          kvalifikacija od 31.3. do 14.4. Prva runda bit će otvorena oba tjedna,
-          dok će druga runda biti dostupna samo drugi tjedan. Za sudjelovanje na
-          kvalifikacijama potrebno je prijaviti se putem naše web stranice do
-          16.3. Moguće je prijaviti se samostalno ili u timu do X ljudi. Ukoliko
-          se prijavite samostalno, dodijelit ćemo vas u neki od timova.
-          Sudjelovati mogu samo studenti koji studiraju u Republici Hrvatskoj.
-          Online kvalifikacije održavaju se na našoj platformi LINK. Najbolji
-          natjecatelji bit će pozvani na on-site natjecanje 8. lipnja. Za
-          on-site natjecanje potrebno je donijeti osobno računalo i
-          identifikacijski dokument.
-        </p>
-      </div>
-    </div>
+    </section>
 
-    <div class="flex flex-col gap-4" id="mingle">
-      <div class="text-xl font-bold text-[#F5F5F5]">
-        MINGLE CTF (CAPTURE THE FLASK)
-      </div>
-      <div class="text-white-smoke text-lg">
-        Neformalno druženje uz kavu i grickalice – prilika za umrežavanje s
-        kolegama i stručnjacima.
-      </div>
-    </div>
-
-    <div class="space-y-4" id="flash-talks">
-      <div class="text-xl font-bold text-[#F5F5F5]">FLASH TALKS</div>
-      <div class="text-white-smoke text-lg">
-        Kratke, dinamične prezentacije na aktualne teme. Prilika za dijeljenje
-        znanja i inspiraciju!
-      </div>
-    </div>
-
-    <div class="space-y-4" id="panel-rasprave">
-      <div class="text-xl font-bold text-[#F5F5F5]">PANEL RASPRAVA</div>
-      <div class="text-white-smoke text-lg">
-        Eksperti iz industrije raspravljaju o najnovijim trendovima, prijetnjama
-        i budućnosti sigurnosti.
-      </div>
-    </div>
-
-    <div class="flex flex-col gap-4 text-[#F5F5F5]">
-      <div class="text-xl font-bold">RASPORED</div>
-      <div class="flex gap-2 text-lg">
-        Dostupan na stranici <a
-          href="/raspored"
-          class="text-attack-darker-red hover:text-attack-red flex items-center gap-2"
+    <section id="sponzori" class="space-y-16">
+      <div class="space-y-4">
+        <h1
+          id="erste-cyber-guardian"
+          class="text-white-smoke text-2xl font-bold"
         >
-          <p>Raspored</p>
-          <ExternalLink />
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="space-y-4" id="organizacija">
-    <div class="text-3xl font-bold text-[#F5F5F5]">ORGANIZACIJA</div>
-    <div class="text-lg text-[#D2D2D2]">
-      <p>Konferenciju organiziraju studenti FER-a pod vodstvom profesora.</p>
-      <br />
-      <p>
-        Koordinatori:
-        <br />
-        <ul class="list-inside list-disc">
-          <li>
-            Prof. dr. sc. Marin Vuković – <a
-              href="mailto:marin.vukovic@fer.unizg.hr"
-              >marin.vukovic@fer.unizg.hr</a
-            >
-          </li>
-          <li>
-            FER organizacijski tim – <a href="mailto:faks.konferencija@fer.hr"
-              >faks.konferencija@fer.hr</a
-            >
-          </li>
-        </ul>
-        <br />
-        <p>Možete nas kontaktirati i putem društvenih mreža!</p>
-      </p>
-    </div>
-    <div class="flex flex-col gap-8" id="erste-cyber-guardian">
-      <div class="flex flex-col gap-4">
-        <div class="text-3xl font-bold text-[#F5F5F5]">
           ERSTE CYBER GUARDIAN
-        </div>
-        <div class="grid grid-cols-3">
-          <div class="col-span-2 text-lg text-[#D2D2D2]">
+        </h1>
+
+        <div class="flex flex-col gap-10 2xl:flex-row">
+          <div class="flex-2 text-lg text-[#D2D2D2]">
             Erste Cyber Guardian inicijativa je Erste Banke Hrvatska usmjerena
             na jačanje kibernetičke sigurnosti, edukaciju i podizanje svijesti o
             cyber prijetnjama. Program uključuje različite aktivnosti poput
@@ -212,40 +227,48 @@ const data = [
             edukacijskih sadržaja i natjecanja, čime doprinosi razvoju
             sigurnosne zajednice u Hrvatskoj.
           </div>
-          <div class="flex flex-col items-center justify-around">
-            <div class="flex flex-row items-center justify-center">
-              <a
-                href="https://www.erstebank.hr/hr/sigurnost/erste-cyber-guardian"
-              >
-                <img src="/sponsors/erste1.svg" />
-              </a>
-            </div>
-            <div class="flex flex-row items-center justify-center">
-              <img src="/sponsors/erste2.svg" />
-            </div>
+
+          <!-- SLIKE -->
+          <div
+            class="flex w-full flex-1 flex-col items-center justify-around gap-5"
+          >
+            <a
+              href="https://www.erstebank.hr/hr/sigurnost/erste-cyber-guardian"
+              class="w-full lg:max-w-2/3 2xl:max-w-full"
+            >
+              <img src="/sponsors/erste1.svg" class="w-full" />
+            </a>
+            <img
+              src="/sponsors/erste2.svg"
+              class="w-full lg:max-w-2/3 2xl:max-w-full"
+            />
           </div>
         </div>
       </div>
-      <div class="flex flex-col gap-4">
-        <div class="text-3xl font-bold text-[#F5F5F5]">DIGITALNA EUROPA</div>
+
+      <div class="space-y-4">
+        <h1 class="text-2xl font-bold text-[#F5F5F5]">DIGITALNA EUROPA</h1>
         <div class="col-span-2 text-lg text-[#D2D2D2]">
-          https://eufondovi.gov.hr/programi-unije-2021-2027/digitalna-europa/
-          <br />
-          Digitalna Europa program je Europske unije koji financira projekte usmjerene
-          na digitalnu transformaciju europskog društva i gospodarstva. Cilj programa
-          je jačanje digitalnih kapaciteta EU-a kroz ulaganja u umjetnu inteligenciju,
-          kibernetičku sigurnost, superračunalstvo i digitalne vještine. FAKS je
-          dio ove inicijative s ciljem podizanja svijesti i edukacije o kibernetičkoj
-          sigurnosti među studentima i stručnjacima
+          <a
+            class="text-defense-lighter-blue hover:underline"
+            href=" https://eufondovi.gov.hr/programi-unije-2021-2027/digitalna-europa/ "
+            >Digitalna Europa</a
+          > program je Europske unije koji financira projekte usmjerene na digitalnu
+          transformaciju europskog društva i gospodarstva. Cilj programa je jačanje
+          digitalnih kapaciteta EU-a kroz ulaganja u umjetnu inteligenciju, kibernetičku
+          sigurnost, superračunalstvo i digitalne vještine. FAKS je dio ove inicijative
+          s ciljem podizanja svijesti i edukacije o kibernetičkoj sigurnosti među
+          studentima i stručnjacima
         </div>
       </div>
-      <div class="flex flex-col gap-4">
-        <div class="text-3xl font-bold text-[#F5F5F5]">SPONZORI</div>
+
+      <div class="space-y-4">
+        <h1 class="text-2xl font-bold text-[#F5F5F5]">SPONZORI</h1>
         <div class="flex flex-wrap">
           <img src="/sponsors/fer.svg" />
         </div>
       </div>
-    </div>
+    </section>
   </div>
-  <Footer className="mt-20" />
+  <Footer />
 </div>
