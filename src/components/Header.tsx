@@ -15,7 +15,7 @@ const links = [
   { title: "info", link: "/info" },
   { title: "predavači", link: "/predavaci" },
   { title: "obavijesti", link: "/obavijesti" },
-  { title: "CTF", link: "https://faks.ctf.hr/", icon: ExternalLink },
+  { title: "CTF", link: "https://forms.gle/ZwmybUECgv43tWGR6", icon: ExternalLink },
 ];
 
 export default function Header() {
