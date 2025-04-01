@@ -2,6 +2,7 @@
 import Footer from "./Footer";
 import EventActivitiesSummary from "./info/EventActivitiesSummary.astro";
 import { ExternalLink } from "lucide-react";
+import InlineLink from "./InlineLink";
 
 const data = [
   {
@@ -109,10 +110,9 @@ const data = [
         <h1 class="text-2xl font-bold text-[#F5F5F5]">CTF NATJECANJE</h1>
         <div>
           <p class="text-lg">
-            <a
+            <InlineLink
               href="https://en.wikipedia.org/wiki/Capture_the_flag_(cybersecurity)"
-              class="text-[#017EFE] hover:underline"
-              >Capture the flag natjecanje</a
+              variant="defense">Capture the flag natjecanje</InlineLink
             > je tip natjecanja u kojemu se ispituju vještine kibernetičke sigurnosti
             kroz više različitih tipova zadataka. Cilj svakog zadatka je otkriti
             kratki tekstualni niz, zvan zastavica (eng. flag), od čega i potječe
@@ -128,21 +128,17 @@ const data = [
             kvalifikacija od 7.4. do 21.4. Prva runda bit će otvorena oba
             tjedna, dok će druga runda biti dostupna samo drugi tjedan. Za
             sudjelovanje na kvalifikacijama potrebno je prijaviti se putem naše
-            web stranice do 5.4. u 23:59. Prijaviti se možete putem <a
-              class="text-defense-lighter-blue hover:underline"
-              href="https://forms.gle/ZwmybUECgv43tWGR6"
-              target="blank_">ovdje</a
-            >. Moguće je prijaviti se samostalno ili u timu do 5 ljudi. Ukoliko
-            se prijavite samostalno, dodijelit ćemo vas u neki od timova.
-            Sudjelovati mogu samo studenti koji studiraju u Republici Hrvatskoj.
-            Online kvalifikacije održavaju se na našoj
-            <a
-              href="https://faks.ctf.hr"
-              class="text-defense-lighter-blue hover:underline"
-              target="blank_">CTF platformi</a
-            >. Najbolji natjecatelji bit će pozvani na on-site natjecanje 8.
-            lipnja. Za on-site natjecanje potrebno je donijeti osobno računalo i
-            identifikacijski dokument.
+            web stranice do 5.4. u 23:59. Prijaviti se možete putem <InlineLink
+              href="https://forms.gle/ZwmybUECgv43tWGR6">ovdje</InlineLink
+            >
+            . Moguće je prijaviti se samostalno ili u timu do 5 ljudi. Ukoliko se
+            prijavite samostalno, dodijelit ćemo vas u neki od timova. Sudjelovati
+            mogu samo studenti koji studiraju u Republici Hrvatskoj. Online kvalifikacije
+            održavaju se na našoj
+            <InlineLink href="https://faks.ctf.hr">CTF platformi</InlineLink>
+            . Najbolji natjecatelji bit će pozvani na on-site natjecanje 8. lipnja.
+            Za on-site natjecanje potrebno je donijeti osobno računalo i identifikacijski
+            dokument.
           </p>
         </div>
       </div>
@@ -176,13 +172,14 @@ const data = [
       <div class="space-y-4 text-[#E0E0E0]" id="raspored">
         <h1 class="text-white-smoke text-2xl font-bold">RASPORED</h1>
         <div class="flex gap-2 text-lg">
-          Dostupan na stranici <a
+          Dostupan na stranici <InlineLink
             href="/raspored"
-            class="text-attack-darker-red hover:text-attack-red flex items-center gap-2"
+            className="flex items-center gap-2"
+            variant="attack"
           >
             <p>Raspored</p>
             <ExternalLink />
-          </a>
+          </InlineLink>
         </div>
       </div>
     </section>
@@ -197,14 +194,16 @@ const data = [
           <br />
           <ul class="list-inside list-disc">
             <li>
-              Izv. prof. dr. sc. Marin Vuković – <a
+              Izv. prof. dr. sc. Marin Vuković – <InlineLink
+                variant="default"
                 href="mailto:marin.vukovic@fer.unizg.hr"
-                >marin.vukovic@fer.unizg.hr</a
+                >marin.vukovic@fer.unizg.hr</InlineLink
               >
             </li>
             <li>
-              FER organizacijski tim – <a href="mailto:faks.konferencija@fer.hr"
-                >faks.konferencija@fer.hr</a
+              FER organizacijski tim – <InlineLink
+                href="mailto:faks.konferencija@fer.hr"
+                variant={"default"}>faks.konferencija@fer.hr</InlineLink
               >
             </li>
           </ul>
@@ -257,10 +256,9 @@ const data = [
       <div class="space-y-4">
         <h1 class="text-2xl font-bold text-[#F5F5F5]">DIGITALNA EUROPA</h1>
         <div class="col-span-2 text-lg text-[#D2D2D2]">
-          <a
-            class="text-defense-lighter-blue hover:underline"
+          <InlineLink
             href=" https://eufondovi.gov.hr/programi-unije-2021-2027/digitalna-europa/ "
-            >Digitalna Europa</a
+            >Digitalna Europa</InlineLink
           > program je Europske unije koji financira projekte usmjerene na digitalnu
           transformaciju europskog društva i gospodarstva. Cilj programa je jačanje
           digitalnih kapaciteta EU-a kroz ulaganja u umjetnu inteligenciju, kibernetičku
@@ -272,8 +270,10 @@ const data = [
 
       <div class="space-y-4">
         <h1 class="text-2xl font-bold text-[#F5F5F5]">SPONZORI</h1>
-        <div class="flex flex-wrap">
+        <div class="flex flex-wrap justify-around">
           <img src="/sponsors/fer.svg" />
+          <img src="/sponsors/erste1.svg" />
+          <img src="/sponsors/erste2.svg" />
         </div>
       </div>
     </section>
