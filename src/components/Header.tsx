@@ -17,7 +17,7 @@ const links = [
   { title: "obavijesti", link: "/obavijesti" },
   {
     title: "CTF",
-    link: "https://forms.gle/ZwmybUECgv43tWGR6",
+    link: "https://faks.ctf.hr",
     icon: ExternalLink,
   },
 ];
