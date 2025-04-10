@@ -119,7 +119,7 @@ const Footer = ({ className }: Props) => (
         telephoneNumber="+385 1 6129 999"
         address="Unska 3, Zagreb"
       />
-      <LinksSection title="Instražite" links={exploreLinks} />
+      <LinksSection title="Istražite" links={exploreLinks} />
       <LinksSection title="Povežite se s nama" links={socialLinks} />
       <LinksSection title="O nama i partnerima" links={aboutLinks} />
     </div>
