@@ -144,11 +144,10 @@ const events: EventInfo[][] = [
   ],
   [
     {
-      start: "11:30",
-      end: "14:30",
-      title: "TBA",
+      start: "10:00",
+      end: "18:00",
+      title: "CTF",
       type: "keynote",
-      speaker: "TBA",
     },
   ],
 ];
