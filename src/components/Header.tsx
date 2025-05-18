@@ -20,6 +20,11 @@ const links = [
     link: "https://faks.ctf.hr",
     icon: ExternalLink,
   },
+  {
+    title: "Flash",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSfyre-JnrLKU_fyHokbIOR772-Vm10dJuAPjkCE19X3_-X1Zw/viewform?usp=dialog",
+    icon: ExternalLink,
+  },
 ];
 
 export default function Header() {
