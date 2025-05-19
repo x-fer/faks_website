@@ -1,6 +1,5 @@
 import "@styles/global.css";
 import { Calendar, MapPin, Icon, type LucideIcon } from "lucide-react";
-
 type ISTProps = {
   icon: LucideIcon;
   text: string;
@@ -41,23 +40,28 @@ export default function Landing() {
           </p>
         </div>
         <a
-          href="/info"
-          className="inset-shadow-attack-red/20 border-attack-darker-red font-open-sans w-min rounded-md border-2 bg-black px-12 py-2 text-lg font-semibold text-nowrap text-gray-400 inset-shadow-[0_0_50px_5px]"
+          href="/flash-talk"
+          className="inset-shadow-attack-red/20 border-attack-darker-red font-open-sans rounded-md border-2 bg-black px-10 py-3 text-lg font-bold text-attack-darker-red inset-shadow-[0_0_50px_5px] mt-4"
         >
-          Saznaj više
+          Prijavite svoj flash talk!
         </a>
       </div>
-
       <div className="container mx-auto hidden h-screen flex-grow grid-cols-5 md:grid">
         <div className="col-span-3 my-auto flex-col space-y-30">
           <img src="/FAKS.svg" className="z-20 w-full" alt="FAKS logo" />
-
           <div className="mx-4 flex items-center justify-between">
             <IconSpacerText text="7. i 8. lipnja 2025." icon={Calendar} />
             <IconSpacerText text="FER, Unska 3, Zagreb" icon={MapPin} />
           </div>
+          <div className="flex justify-center mt-16">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfyre-JnrLKU_fyHokbIOR772-Vm10dJuAPjkCE19X3_-X1Zw/viewform"
+              className="inset-shadow-attack-red/20 border-attack-darker-red font-open-sans rounded-md border-2 bg-black px-16 py-4 text-2xl font-bold text-attack-darker-red inset-shadow-[0_0_50px_5px] hover:bg-attack-darker-red hover:text-black transition-colors duration-300"
+            >
+              Prijavite svoj flash talk!
+            </a>
+          </div>
         </div>
-
         <img src="/hero.svg" className="col-span-2 my-auto" alt="Hero image" />
       </div>
     </>
