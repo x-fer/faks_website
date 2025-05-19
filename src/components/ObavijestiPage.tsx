@@ -21,6 +21,19 @@ type NewsType = {
 
 const NEWS: NewsType[] = [
   {
+    title: "Prijavite svoj flash talk!",
+    contents: (
+      <p>
+        Link na prijave je dostupan{" "}
+        <InlineLink variant="attack" href="https://docs.google.com/forms/d/e/1FAIpQLSfyre-JnrLKU_fyHokbIOR772-Vm10dJuAPjkCE19X3_-X1Zw/viewform">
+          ovdje
+        </InlineLink>
+        .
+      </p>
+    ),
+    timePosted: dayjs("2025-05-19T12:00:00").tz("Europe/Zagreb"), //
+  },
+  {
     title: "Otvorene su prijave za CTF natjecanje",
     contents: (
       <p>
