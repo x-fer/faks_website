@@ -3,11 +3,11 @@ import TimeSlotEntry from "./raspored/TimeSlotEntry";
 import Footer from "./Footer";
 import { useState, useMemo } from "react";
 import { cn } from "@src/assets/lib/utils";
+import events from "../data/predavanja"
 
 const times: string[] = [];
 const START_HOUR = 9;
-const END_HOUR = 19; // INCLUSIVE
-// TODO: extend this to 20 hours, need to adjust height of time displkay
+const END_HOUR = 19;
 
 const TIME_SLOT_HEIGHT = 64; // Height of each time slot in pixels
 const TIME_LINE_HEIGHT = 2;
@@ -15,142 +15,7 @@ const TIME_LINE_HEIGHT = 2;
 for (let hour = START_HOUR; hour < END_HOUR; hour++) {
   times.push(`${hour.toString().padStart(2, "0")}:00`);
   times.push(`${hour.toString().padStart(2, "0")}:30`);
-  // TODO: make the end our inclusive
 }
-
-export type EventInfo = {
-  start: string;
-  end: string;
-  title: string;
-  type: "tech" | "policy" | "keynote" | "neutral";
-  speaker?: string;
-  small?: boolean;
-};
-// Example events with start and end times
-const events: EventInfo[][] = [
-  [
-    {
-      start: "09:30",
-      end: "10:00",
-      title: "Otvorenje",
-      type: "neutral",
-    },
-    {
-      start: "10:00",
-      end: "10:45",
-      title: "TBA - Policy keynote",
-      type: "keynote",
-      speaker: "TBA",
-    },
-    // talks set 1
-    {
-      start: "11:00",
-      end: "11:45",
-      title: "TBA",
-      type: "tech",
-      speaker: "TBA",
-    },
-    {
-      start: "11:00",
-      end: "11:45",
-      title: "TBA",
-      type: "policy",
-      speaker: "TBA",
-    },
-    // talks set 2
-    {
-      start: "12:00",
-      end: "12:45",
-      title: "TBA",
-      type: "tech",
-      speaker: "TBA",
-    },
-    {
-      start: "12:00",
-      end: "12:45",
-      title: "TBA",
-      type: "policy",
-      speaker: "TBA",
-    },
-    // lunch
-    {
-      start: "12:45",
-      end: "13:45",
-      title: "Ručak",
-      type: "neutral",
-    },
-    {
-      start: "13:45",
-      end: "14:30",
-      title: "TBA - Tech keynote",
-      type: "keynote",
-      speaker: "TBA",
-    },
-    {
-      start: "14:30",
-      end: "14:45",
-      title: "Intermezzo - Zahvale",
-      type: "neutral",
-      small: true,
-    },
-    {
-      start: "14:45",
-      end: "15:30",
-      title: "TBA",
-      type: "tech",
-      speaker: "TBA",
-    },
-    {
-      start: "14:45",
-      end: "15:30",
-      title: "TBA",
-      type: "policy",
-      speaker: "TBA",
-    },
-    {
-      start: "15:30",
-      end: "16:00",
-      title: "Kaffica time!",
-      type: "neutral",
-    },
-    {
-      start: "16:00",
-      end: "16:45",
-      title: "TBA",
-      type: "tech",
-      speaker: "TBA",
-    },
-    {
-      start: "16:00",
-      end: "16:45",
-      title: "TBA",
-      type: "policy",
-      speaker: "TBA",
-    },
-    {
-      start: "17:00",
-      end: "17:45",
-      title: "TBA",
-      type: "tech",
-      speaker: "TBA",
-    },
-    {
-      start: "17:00",
-      end: "17:45",
-      title: "TBA",
-      type: "policy",
-      speaker: "TBA",
-    },
-  ],
-  [
-    {
-      start: "10:00",
-      end: "18:00",
-      title: "CTF",
-      type: "keynote",
-    },
-  ],
-];
 
 // Calculate the top and height for each event
 const calculateEventStyle = (start: string, end: string) => {
@@ -253,11 +118,12 @@ export default function RasporedPage() {
               }}
             />
           ))}
-          {events[dayIndex].map((event, i) => {
-            const style = calculateEventStyle(event.start, event.end);
+          {events[dayIndex].map((event) => {
+            const style = calculateEventStyle(event.startDateTime.format("HH:mm"), event.endDateTime.format("HH:mm"));
+
             return (
               <TimeSlotEntry
-                key={`${event.start}-${event.type}`}
+                key={`${event.startDateTime}-${event.endDateTime}`}
                 event={event}
                 style={style}
               />

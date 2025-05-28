@@ -2,16 +2,11 @@ import Footer from "./Footer";
 
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import timezone from "dayjs-timezone-iana-plugin";
-import utc from "dayjs/plugin/utc";
 import type React from "react";
 import InlineLink from "./InlineLink";
 
-dayjs.extend(timezone);
 // Extend dayjs with the relativeTime plugin
 dayjs.extend(relativeTime);
-dayjs.extend(timezone);
-dayjs.extend(utc);
 
 type NewsType = {
   title: string;
@@ -31,7 +26,7 @@ const NEWS: NewsType[] = [
         .
       </p>
     ),
-    timePosted: dayjs("2025-05-19T12:00:00").tz("Europe/Zagreb"), //
+    timePosted: dayjs("2025-05-19T12:00:00"), //
   },
   {
     title: "Otvorene su prijave za CTF natjecanje",
@@ -53,12 +48,12 @@ const NEWS: NewsType[] = [
         .
       </p>
     ),
-    timePosted: dayjs("2025-04-01T12:00:00").tz("Europe/Zagreb"), //
+    timePosted: dayjs("2025-04-01T12:00:00"), //
   },
   {
     title: "Dobrodošli na FAKS web stranicu!",
     contents: "Ovo je službena stranica FAKS Konferencije!",
-    timePosted: dayjs("2025-03-18T18:23:00").tz("Europe/Zagreb"), //
+    timePosted: dayjs("2025-03-18T18:23:00"), //
   },
 ];
 

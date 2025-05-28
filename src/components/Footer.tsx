@@ -48,7 +48,7 @@ const LinksSection = ({ title, links }: LinksSectionProps) => (
     </div>
     <ul className="flex flex-col items-center gap-2 md:items-start">
       {links.map(({ link, linkText }) => (
-        <li>
+        <li key={link}>
           <a
             className="hover:text-attack-darker-red text-[#E0E0E0]"
             href={link}

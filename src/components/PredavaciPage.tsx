@@ -1,6 +1,6 @@
----
 import SpeakerItem from "./predavaci/SpeakerItem.astro";
 import Footer from "./Footer.js";
+import { useEffect } from "react";
 
 const data = [
   {
@@ -14,15 +14,18 @@ const data = [
     date: "June 12, 2024 14:00-14:35",
   },
 ];
----
 
-<div
-  class="my-10 flex h-screen w-full flex-col gap-10 px-5 md:gap-16 lg:mx-auto xl:w-2/3"
->
-  <h1
-    class="text-white-smoke flex w-full grow items-center justify-center text-9xl font-black"
-  >
-    TBD
-  </h1>
-  <Footer />
-</div>
+export default function PredavaciPage() {
+  useEffect(() => {
+    console.log("hello");
+  }, []);
+
+  return (
+    <div className="my-10 flex h-screen w-full flex-col gap-10 px-5 md:gap-16 lg:mx-auto xl:w-2/3">
+      <h1 className="text-white-smoke flex w-full grow items-center justify-center text-9xl font-black">
+        TBD
+      </h1>
+      <Footer />
+    </div>
+  );
+}
