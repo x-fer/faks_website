@@ -1,7 +1,6 @@
 import { User } from "lucide-react";
 import { cn } from "@src/assets/lib/utils";
 import type { EventInfo } from "@src/data/predavanja";
-import events from "@src/data/predavanja";
 
 type Props = {
   event: EventInfo;
@@ -61,7 +60,7 @@ export default function TimeSlotEntry({ event, style }: Props) {
     >
       <p
         className={cn(
-          "font-open-sans text-md text-white-smoke line-clamp-3 md:text-xl",
+          "font-open-sans text-md text-white-smoke line-clamp-3 md:text-lg",
           event.small && "md:text-lg",
         )}
       >

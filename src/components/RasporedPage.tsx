@@ -1,20 +1,22 @@
 import "@styles/global.css";
 import TimeSlotEntry from "./raspored/TimeSlotEntry";
 import Footer from "./Footer";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { cn } from "@src/assets/lib/utils";
 import events from "../data/predavanja"
 
 const times: string[] = [];
 const START_HOUR = 9;
-const END_HOUR = 19;
+const END_HOUR = 20;
 
-const TIME_SLOT_HEIGHT = 64; // Height of each time slot in pixels
-const TIME_LINE_HEIGHT = 2;
+const TIME_SLOT_SPACING = 120; // Height of each time slot in pixels
+const TIME_LINE_HEIGHT = 3;
 
 for (let hour = START_HOUR; hour < END_HOUR; hour++) {
   times.push(`${hour.toString().padStart(2, "0")}:00`);
-  times.push(`${hour.toString().padStart(2, "0")}:30`);
+  if (hour !== END_HOUR) {
+    times.push(`${hour.toString().padStart(2, "0")}:30`);
+  }
 }
 
 // Calculate the top and height for each event
@@ -28,10 +30,10 @@ const calculateEventStyle = (start: string, end: string) => {
 
   const top =
     ((startMinutes - startTime) / totalMinutes) *
-    (TIME_SLOT_HEIGHT * times.length);
+    (TIME_SLOT_SPACING * times.length);
   const height =
     ((endMinutes - startMinutes) / totalMinutes) *
-      (TIME_SLOT_HEIGHT * times.length) +
+      (TIME_SLOT_SPACING * times.length) +
     TIME_LINE_HEIGHT;
 
   return { top: `${top}px`, height: `${height}px`, zIndex: top };
@@ -66,7 +68,7 @@ const DaySelectButton = ({
 };
 
 export default function RasporedPage() {
-  const timetableHeight = (END_HOUR - START_HOUR) * 2 * TIME_SLOT_HEIGHT;
+  const timetableHeight = times.length  * TIME_SLOT_SPACING
   const [dayIndex, setDayIndex] = useState<number>(0);
 
   return (
@@ -93,11 +95,11 @@ export default function RasporedPage() {
         style={{ height: `${timetableHeight}px` }}
       >
         <div className="hidden flex-col sm:flex">
-          {times.map((time) => (
+          {times.slice(0, -1).map((time) => (
             <div
               key={time}
               style={{
-                height: `${TIME_SLOT_HEIGHT}px`,
+                height: `${TIME_SLOT_SPACING}px`,
               }}
             >
               <div className="time font-open-sans flex -translate-y-1/2 items-center text-sm font-semibold text-gray-500 md:text-xl">
@@ -107,23 +109,23 @@ export default function RasporedPage() {
           ))}
         </div>
         <div className="relative w-full">
-          {times.map((time, index) => (
+          {times.slice(0, -1).map((time, index) => (
             <div
               key={time}
               className="absolute w-full border-t border-gray-600"
               style={{
-                top: `${TIME_SLOT_HEIGHT * index}px`,
-                height: `${TIME_SLOT_HEIGHT}px`,
+                top: `${TIME_SLOT_SPACING * index}px`,
+                height: `${TIME_SLOT_SPACING}px`,
                 borderTopWidth: `${TIME_LINE_HEIGHT}px`,
               }}
             />
           ))}
-          {events[dayIndex].map((event) => {
-            const style = calculateEventStyle(event.startDateTime.format("HH:mm"), event.endDateTime.format("HH:mm"));
+          {events[dayIndex].map((event, i) => {
+            const style = calculateEventStyle(event.startTime, event.endTime);
 
             return (
               <TimeSlotEntry
-                key={`${event.startDateTime}-${event.endDateTime}`}
+                key={`${event.startTime}-${event.endTime}-${i}`}
                 event={event}
                 style={style}
               />
