@@ -27,7 +27,7 @@ export default function PredavaciDeatilsCard(props: Props) {
         <div className="flex flex-col-reverse lg:flex-row gap-5">
           <div
             className={cn(
-              "font-open-sans h-min w-min mx-auto lg:mx-0 rounded-md border-2 px-8 py-1 font-semibold text-[#BCBCBC] uppercase",
+              "font-open-sans h-min mx-auto w-min lg:mx-0 rounded-md border-2 text-center px-10 py-1 font-semibold text-[#BCBCBC] uppercase text-md",
               eventStyles[talkInfo.type],
             )}
           >
