@@ -16,14 +16,14 @@ type BaseEvent = {
     small?: boolean;
 };
 
-type TalkEvent = BaseEvent & {
+export type TalkEvent = BaseEvent & {
     isTalk: true;
     talkInfo: TalkInfo;
 };
 
 type NonTalkEvent = BaseEvent & {
-    title: string
     isTalk: false;
+    title: string
     talkInfo?: undefined;
 };
 

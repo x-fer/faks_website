@@ -59,7 +59,7 @@ const NEWS: NewsType[] = [
 
 export default function ObavijestiPage() {
   return (
-    <div className="my-10 flex h-screen w-full flex-col gap-10 px-5 md:gap-16 lg:mx-auto xl:w-2/3">
+    <div className="my-20 flex h-screen w-full flex-col gap-10 px-5 md:gap-16 lg:mx-auto xl:w-2/3">
       <div className="grow space-y-10">
         {NEWS.map((newsInfo) => (
           <div className="font-open-sans text-white-smoke rounded-xl border-2 border-white bg-black p-10">
