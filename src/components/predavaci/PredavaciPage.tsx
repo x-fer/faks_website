@@ -27,7 +27,7 @@ export default function PredavaciPage() {
           return 0; // otherwise equal
         })
         .map((event) => (
-          <PredavaciDeatilsCard event={event} />
+          <PredavaciDeatilsCard event={event} key={event.isTalk ? event.talkInfo.title : event.startTime} />
         ))}
       <Footer className="mt-20" />
     </div>

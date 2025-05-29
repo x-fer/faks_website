@@ -19,7 +19,7 @@ export default function PredavaciDetailsCard(props: Props) {
   const hasSpeakerBiographies = speakers.some(speaker => speaker.biography?.trim());
 
   return (
-    <div className="flex flex-col gap-10 lg:flex-row lg:gap-20">
+    <div className="flex flex-col gap-10 lg:flex-row lg:gap-20" id={talkInfo.title.toLowerCase().replaceAll(" ", "-")}>
       <div className="mx-auto flex flex-col items-center gap-5 lg:mx-0 w-full lg:w-auto">
         {(() => {
           // Check if any speaker has an image
