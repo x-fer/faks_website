@@ -11,6 +11,9 @@
     "prepare": "husky",
     "deploy": "git switch main && git merge dev && git push && git switch dev"
   },
+  "engines": {
+    "node": ">=18.20.8"
+  },
   "dependencies": {
     "@astrojs/react": "^4.2.1",
     "@radix-ui/react-dialog": "^1.1.6",
@@ -22,7 +25,6 @@
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
     "dayjs-plugin-utc": "^0.1.2",
-    "dayjs-timezone-iana-plugin": "^0.1.0",
     "lucide-react": "^0.479.0",
     "npm": "^11.2.0",
     "react": "^19.0.0",

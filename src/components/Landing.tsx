@@ -35,7 +35,7 @@ export default function Landing() {
           </p>
           <p>
             FER,{" "}
-            <span className="text-attack-darker-red font-bold">Unska 3</span>,
+            <span className="text-attack-darker-red font-bold">Ulica Grada Vukovara 39</span>,
             Zagreb
           </p>
         </div>
@@ -51,7 +51,7 @@ export default function Landing() {
           <img src="/FAKS.svg" className="z-20 w-full" alt="FAKS logo" />
           <div className="mx-4 flex items-center justify-between">
             <IconSpacerText text="7. i 8. lipnja 2025." icon={Calendar} />
-            <IconSpacerText text="FER, Unska 3, Zagreb" icon={MapPin} />
+            <IconSpacerText text="FER, Ulica Grada Vukovara 39 Zagreb" icon={MapPin} />
           </div>
           <div className="flex justify-center mt-16">
             <a

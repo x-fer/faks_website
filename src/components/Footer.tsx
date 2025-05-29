@@ -48,7 +48,7 @@ const LinksSection = ({ title, links }: LinksSectionProps) => (
     </div>
     <ul className="flex flex-col items-center gap-2 md:items-start">
       {links.map(({ link, linkText }) => (
-        <li>
+        <li key={link}>
           <a
             className="hover:text-attack-darker-red text-[#E0E0E0]"
             href={link}
@@ -117,7 +117,7 @@ const Footer = ({ className }: Props) => (
       <ContactInfo
         email="faks.konferencija@fer.hr"
         telephoneNumber="+385 1 6129 999"
-        address="Unska 3, Zagreb"
+        address="Ulica Grada Vukovara 39, Zagreb"
       />
       <LinksSection title="Istražite" links={exploreLinks} />
       <LinksSection title="Povežite se s nama" links={socialLinks} />

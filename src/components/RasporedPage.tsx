@@ -1,156 +1,59 @@
 import "@styles/global.css";
 import TimeSlotEntry from "./raspored/TimeSlotEntry";
 import Footer from "./Footer";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { cn } from "@src/assets/lib/utils";
+import events from "../data/predavanja"
+
+// Import or define the types based on your data structure
+export type SpeakerType = {
+  name: string;
+  image: string;
+  biography: string;
+  gender: string;
+  title: string;
+};
+
+export type TalkInfo = {
+  title: string;
+  description: string;
+  speakers?: SpeakerType[];
+  logo: string;
+  type: "tech" | "policy" | "keynote";
+};
+
+type BaseEvent = {
+  startTime: string;
+  endTime: string;
+  small?: boolean;
+};
+
+export type TalkEvent = BaseEvent & {
+  isTalk: true;
+  talkInfo: TalkInfo;
+};
+
+type NonTalkEvent = BaseEvent & {
+  isTalk: false;
+  title: string;
+  talkInfo?: undefined;
+};
+
+export type Event = TalkEvent | NonTalkEvent;
 
 const times: string[] = [];
 const START_HOUR = 9;
-const END_HOUR = 19; // INCLUSIVE
-// TODO: extend this to 20 hours, need to adjust height of time displkay
+const END_HOUR = 20;
 
-const TIME_SLOT_HEIGHT = 64; // Height of each time slot in pixels
-const TIME_LINE_HEIGHT = 2;
+const TIME_SLOT_SPACING = 120; // Height of each time slot in pixels
+const TIME_LINE_HEIGHT = 3;
 
 for (let hour = START_HOUR; hour < END_HOUR; hour++) {
   times.push(`${hour.toString().padStart(2, "0")}:00`);
-  times.push(`${hour.toString().padStart(2, "0")}:30`);
-  // TODO: make the end our inclusive
+  if (hour !== END_HOUR) {
+    times.push(`${hour.toString().padStart(2, "0")}:30`);
+  }
 }
-
-export type EventInfo = {
-  start: string;
-  end: string;
-  title: string;
-  type: "tech" | "policy" | "keynote" | "neutral";
-  speaker?: string;
-  small?: boolean;
-};
-// Example events with start and end times
-const events: EventInfo[][] = [
-  [
-    {
-      start: "09:30",
-      end: "10:00",
-      title: "Otvorenje",
-      type: "neutral",
-    },
-    {
-      start: "10:00",
-      end: "10:45",
-      title: "TBA - Policy keynote",
-      type: "keynote",
-      speaker: "TBA",
-    },
-    // talks set 1
-    {
-      start: "11:00",
-      end: "11:45",
-      title: "TBA",
-      type: "tech",
-      speaker: "TBA",
-    },
-    {
-      start: "11:00",
-      end: "11:45",
-      title: "TBA",
-      type: "policy",
-      speaker: "TBA",
-    },
-    // talks set 2
-    {
-      start: "12:00",
-      end: "12:45",
-      title: "TBA",
-      type: "tech",
-      speaker: "TBA",
-    },
-    {
-      start: "12:00",
-      end: "12:45",
-      title: "TBA",
-      type: "policy",
-      speaker: "TBA",
-    },
-    // lunch
-    {
-      start: "12:45",
-      end: "13:45",
-      title: "Ručak",
-      type: "neutral",
-    },
-    {
-      start: "13:45",
-      end: "14:30",
-      title: "TBA - Tech keynote",
-      type: "keynote",
-      speaker: "TBA",
-    },
-    {
-      start: "14:30",
-      end: "14:45",
-      title: "Intermezzo - Zahvale",
-      type: "neutral",
-      small: true,
-    },
-    {
-      start: "14:45",
-      end: "15:30",
-      title: "TBA",
-      type: "tech",
-      speaker: "TBA",
-    },
-    {
-      start: "14:45",
-      end: "15:30",
-      title: "TBA",
-      type: "policy",
-      speaker: "TBA",
-    },
-    {
-      start: "15:30",
-      end: "16:00",
-      title: "Kaffica time!",
-      type: "neutral",
-    },
-    {
-      start: "16:00",
-      end: "16:45",
-      title: "TBA",
-      type: "tech",
-      speaker: "TBA",
-    },
-    {
-      start: "16:00",
-      end: "16:45",
-      title: "TBA",
-      type: "policy",
-      speaker: "TBA",
-    },
-    {
-      start: "17:00",
-      end: "17:45",
-      title: "TBA",
-      type: "tech",
-      speaker: "TBA",
-    },
-    {
-      start: "17:00",
-      end: "17:45",
-      title: "TBA",
-      type: "policy",
-      speaker: "TBA",
-    },
-  ],
-  [
-    {
-      start: "10:00",
-      end: "18:00",
-      title: "CTF",
-      type: "keynote",
-    },
-  ],
-];
 
 // Calculate the top and height for each event
 const calculateEventStyle = (start: string, end: string) => {
@@ -163,10 +66,10 @@ const calculateEventStyle = (start: string, end: string) => {
 
   const top =
     ((startMinutes - startTime) / totalMinutes) *
-    (TIME_SLOT_HEIGHT * times.length);
+    (TIME_SLOT_SPACING * times.length);
   const height =
     ((endMinutes - startMinutes) / totalMinutes) *
-      (TIME_SLOT_HEIGHT * times.length) +
+      (TIME_SLOT_SPACING * times.length) +
     TIME_LINE_HEIGHT;
 
   return { top: `${top}px`, height: `${height}px`, zIndex: top };
@@ -178,6 +81,7 @@ type DaySelectButtonProps = {
   isSelected: boolean;
   text: string;
 };
+
 const DaySelectButton = ({
   onClick,
   className,
@@ -201,8 +105,11 @@ const DaySelectButton = ({
 };
 
 export default function RasporedPage() {
-  const timetableHeight = (END_HOUR - START_HOUR) * 2 * TIME_SLOT_HEIGHT;
+  const timetableHeight = times.length * TIME_SLOT_SPACING;
   const [dayIndex, setDayIndex] = useState<number>(0);
+
+  // Type the events array properly
+  const dayEvents: Event[] = events[dayIndex];
 
   return (
     <div className="flex w-full flex-col gap-10 px-5 pb-10 md:gap-16 lg:mx-auto xl:w-2/3">
@@ -228,11 +135,11 @@ export default function RasporedPage() {
         style={{ height: `${timetableHeight}px` }}
       >
         <div className="hidden flex-col sm:flex">
-          {times.map((time) => (
+          {times.slice(0, -1).map((time) => (
             <div
               key={time}
               style={{
-                height: `${TIME_SLOT_HEIGHT}px`,
+                height: `${TIME_SLOT_SPACING}px`,
               }}
             >
               <div className="time font-open-sans flex -translate-y-1/2 items-center text-sm font-semibold text-gray-500 md:text-xl">
@@ -242,22 +149,23 @@ export default function RasporedPage() {
           ))}
         </div>
         <div className="relative w-full">
-          {times.map((time, index) => (
+          {times.slice(0, -1).map((time, index) => (
             <div
               key={time}
               className="absolute w-full border-t border-gray-600"
               style={{
-                top: `${TIME_SLOT_HEIGHT * index}px`,
-                height: `${TIME_SLOT_HEIGHT}px`,
+                top: `${TIME_SLOT_SPACING * index}px`,
+                height: `${TIME_SLOT_SPACING}px`,
                 borderTopWidth: `${TIME_LINE_HEIGHT}px`,
               }}
             />
           ))}
-          {events[dayIndex].map((event, i) => {
-            const style = calculateEventStyle(event.start, event.end);
+          {dayEvents.map((event, i) => {
+            const style = calculateEventStyle(event.startTime, event.endTime);
+
             return (
               <TimeSlotEntry
-                key={`${event.start}-${event.type}`}
+                key={`${event.startTime}-${event.endTime}-${i}`}
                 event={event}
                 style={style}
               />
