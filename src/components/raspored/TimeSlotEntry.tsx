@@ -51,33 +51,31 @@ export default function TimeSlotEntry({ event, style }: Props) {
   // Helper function to format speakers names
   const formatSpeakers = (speakers?: Array<{ name: string; title?: string }>) => {
     if (!speakers || speakers.length === 0) return "UNKNOWN";
-    // If only one speaker, return their name
     if (speakers.length === 1) return speakers[0].name;
-    // If multiple speakers, join with comma
     return speakers.map(speaker => speaker.name).join(", ");
   };
 
   return (
     <div
       className={cn(
-        "absolute flex flex-col justify-between rounded-md border-2 px-2 py-1.5 inset-shadow-[0_0_50px_5px] md:border-3 min-h-[70px] overflow-hidden", // MODIFIED: Reduced padding px-4 py-3 to px-2 py-1.5, reduced min-h-[80px] to min-h-[70px]
+        "absolute flex flex-col justify-between rounded-md border-2 px-1.5 py-1 inset-shadow-[0_0_50px_5px] md:border-3 overflow-hidden md:px-2 md:py-1.5", // MODIFIED: Base padding reduced to px-1.5 py-1. Restored md: padding slightly. Removed min-h for default.
         outerDivStyle,
-        event.small && "py-0.5 rounded-sm min-h-[30px]", // MODIFIED: Adjusted padding py-0 to py-0.5, reduced min-h-[40px] to min-h-[30px]
+        event.small && "py-0.5 px-1 rounded-sm min-h-[28px]", // MODIFIED: Adjusted padding for small, reduced min-h further.
       )}
       style={{ ...style }}
     >
       <p
         className={cn(
-          "font-open-sans text-sm text-white-smoke line-clamp-2 md:text-base", // MODIFIED: Reduced font size text-md to text-sm, md:text-lg to md:text-base
-          event.small && "md:text-sm line-clamp-1", // MODIFIED: Reduced font size md:text-lg to md:text-sm for small variant
+          "font-open-sans text-xs text-white-smoke line-clamp-3 sm:text-sm md:text-base md:line-clamp-2", // MODIFIED: Base font to text-xs, line-clamp-3 for mobile. sm:text-sm. md:line-clamp-2
+          event.small && "text-xs md:text-sm line-clamp-1", // MODIFIED: Ensured small is also text-xs base, md:text-sm. line-clamp-1 for small.
         )}
       >
         {event.isTalk ? event.talkInfo.title : event.title}
       </p>
       {event.isTalk && !event.small && (
-        <div className="flex items-center gap-1 mt-0.5"> {/* MODIFIED: Reduced margin-top mt-1 to mt-0.5 */}
-          <User className="size-3 md:size-4 flex-shrink-0" color={icon.color} /> {/* MODIFIED: Reduced icon size size-4 to size-3, md:size-5 to md:size-4 */}
-          <p className="font-open-sans overflow-hidden text-xs text-nowrap overflow-ellipsis text-gray-400 uppercase md:text-sm"> {/* MODIFIED: Reduced font size text-sm to text-xs, md:text-lg to md:text-sm */}
+        <div className="flex items-center gap-0.5 mt-0.5"> {/* MODIFIED: Reduced gap to gap-0.5 */}
+          <User className="size-3 md:size-4 flex-shrink-0" color={icon.color} />
+          <p className="font-open-sans overflow-hidden text-[11px] text-nowrap overflow-ellipsis text-gray-400 uppercase sm:text-xs md:text-sm"> {/* MODIFIED: Base speaker font to text-[11px] (custom), sm:text-xs, md:text-sm */}
             {formatSpeakers(event.talkInfo.speakers)}
           </p>
         </div>
