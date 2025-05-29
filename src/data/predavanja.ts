@@ -60,13 +60,6 @@ const eventsDayOne: EventInfo[] = [
     },
     {
         isTalk: false,
-        startTime: "15:30",
-        endTime: "15:40",
-        title: 'Pauza',
-        small: true
-    },
-    {
-        isTalk: false,
         startTime: "10:45",
         endTime: "11:00",
         title: 'Pauza',
