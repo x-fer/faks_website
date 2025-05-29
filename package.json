@@ -11,6 +11,9 @@
     "prepare": "husky",
     "deploy": "git switch main && git merge dev && git push && git switch dev"
   },
+  "engines": {
+    "node": ">=18.20.8"
+  },
   "dependencies": {
     "@astrojs/react": "^4.2.1",
     "@radix-ui/react-dialog": "^1.1.6",
