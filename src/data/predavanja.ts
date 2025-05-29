@@ -146,7 +146,7 @@ const eventsDayOne: EventInfo[] = [
             description: `Kako izgleda karijera u kibernetičkoj sigurnosti nakon FER-a? U ovom predavanju podijelit ću svoj profesionalni put – od početaka u Hrvatskoj do savjetovanja nekih od najvećih svjetskih organizacija u području kibernetičke sigurnosti. Govorit ću o izazovima i prilikama u osnivanju vlastite konzultantske firme, kako izgleda rad s američkim klijentima, koji su najčešći problemi koje rješavamo, te kako nove EU regulative mijenjaju praksu u industriji. Cilj predavanja je studentima približiti stvarne projekte, tehnologije, timsku dinamiku i poslovne aspekte koji ih očekuju izvan akademskog okruženja.`,
             logo:"/speaker_logo/ostendo.png",
             speakers: [{
-                title:"suosnivačica i direktorica",
+                title:"Suosnivačica i Direktorica",
                 gender:"female",
                 name: "Biljana Cerin",
                 biography: `Biljana Cerin je suosnivačica i direktorica tvrtke Ostendo Consulting. Diplomirala je na FER-u i već više od 25 godina savjetuje organizacije u Europi i SAD-u o upravljanju rizicima kibernetičke sigurnosti i zaštiti privatnosti. Radila je s vodećim institucijama i kompanijama poput Stanford University Hospital, Amgena, MGM Resortsa, Mercka, Zillow-a, T-Coma i drugih.
@@ -187,7 +187,7 @@ const eventsDayOne: EventInfo[] = [
             logo:"/speaker_logo/rl.png",
             speakers: [{
                 gender:"male",
-                title:"Threat Researcher u Threat Detection teamu",
+                title:"Threat Researcher u Threat Detection Teamu",
                 name: "Vladimir Pezo",
                 biography: `Vladimir Pezo pridružio se ReversingLabsu 2022. godine, gdje kao Threat Research Intern prati nove napade na repozitorije otvorenog koda, analizira maliciozni kod i sudjeluje u održavanju interne baze zlonamjernih paketa. Student je 2. godine diplomskog studija Računarske znanosti na FER-u.
 
@@ -226,7 +226,7 @@ const eventsDayOne: EventInfo[] = [
             logo:"",
             speakers: [{
                 gender:"male",
-                title:"Zavodski suradnik",
+                title:"Zavodski Suradnik",
                 name: "Benjamin Nadarević",
                 biography: 'Benjamin Nadarević je zaposlen kao zavodski suradnik u FER-ovom Laboratoriju za Sustave i Signale na poslovima suradnje s gospodarstvom u području kibernetičke sigurnosti. Prvenstveno se bavi penetracijskim testiranjima web aplikacija i izradom zadataka za nacionalna srednjoškolska i studentska CTF natjecanja. Osim toga, povremeno radi i na defanzivnim projektima vezanim za kibernetičku sigurnost.',
                 image: "/speaker_logo/benjamin.jpeg"
@@ -246,14 +246,14 @@ Fokus je isključivo na zaštiti poslovnih digitalnih identiteta, uz praktične 
             logo:"/speaker_logo/cs.png",
             speakers: [{
                 gender:"male",
-                title:"Voditelj tima za zaštitu identiteta i aplikacija",
+                title:"Voditelj tima za Zaštitu Identiteta i Aplikacija",
                 name: "Marco Baban",
                 biography: 'Voditelj tima za zaštitu identiteta i aplikacija u CS Computer Systems, s više od pet godina iskustva u IT industriji. Specijalizirao se za razvoj i implementaciju naprednih rješenja u području kibernetičke sigurnosti. Njegovo bogato inženjersko iskustvo uključuje rad s vrhunskim sigurnosnim tehnologijama kao što su Application Delivery Controllers (ADC), Web Application Firewalls (WAF), Next-Generation Firewall (NGFW) te Privileged Access Management (PAM) sustavi. Nositelj je prestižnih stručnih certifikata, uključujući F5 Solutions Expert, Check Point Master, CyberArk PAM i CSC Delivery Engineer. Njegov rad karakterizira posvećenost sigurnosti, učinkovitosti i inovacijama u zaštiti IT okruženja.',
                 image: "/speakers/Marco_Baban.jpg"
             },
             {
                 gender:"male",
-                title:"cyber security researcher",
+                title:"Cyber Security Researcher",
                 name: "Matija Čiček",
                 biography:"Matija Čiček stručnjak je za kibernetičku sigurnost u CS Computer Systems, kojeg pokreće duboka znatiželja za razumijevanje načina na koji prijetnje nastaju, razvijaju se i mogu biti otkrivene prije nego što postanu napad. U svakodnevnom radu bavi se implementacijom sigurnosnih rješenja poput CyberArk-a, Silverforta i Trellixa, a posebno ga motivira proučavanje složenih prijetnji, s naglaskom na područja kao što su Threat Intelligence, Threat Hunting, OSINT i Social Engineering. Redovito istražuje nove koncepte, alate i taktike, uz stalnu težnju za usavršavanjem i produbljivanjem znanja. Njegov rad oblikuje spoj znanstvene metodologije, tehničke ekspertize i strasti za sigurnost, s jasno usmjerenim ciljem: razumjeti prijetnje u njihovoj srži i graditi otpornije sigurnosne sustave.",
                 image:"/speakers/matija_cicek.jpg"
