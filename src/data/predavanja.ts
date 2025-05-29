@@ -37,7 +37,7 @@ const eventsDayOne: EventInfo[] = [
         title: "Otvorenje",
         isTalk: false,
         startTime: "09:30",
-        endTime: "10:00",
+        endTime: "09:59",
         small: false,
     },
     {
@@ -60,8 +60,15 @@ const eventsDayOne: EventInfo[] = [
     },
     {
         isTalk: false,
-        startTime: "10:45",
-        endTime: "11:00",
+        startTime: "15:11",
+        endTime: "15:29",
+        title: 'Pauza',
+        small: true
+    },
+    {
+        isTalk: false,
+        startTime: "12:06",
+        endTime: "12:59",
         title: 'Pauza',
         small: true
     },
