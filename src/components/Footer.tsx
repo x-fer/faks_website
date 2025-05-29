@@ -117,7 +117,7 @@ const Footer = ({ className }: Props) => (
       <ContactInfo
         email="faks.konferencija@fer.hr"
         telephoneNumber="+385 1 6129 999"
-        address="Unska 3, Zagreb"
+        address="Ulica Grada Vukovara 39, Zagreb"
       />
       <LinksSection title="Istražite" links={exploreLinks} />
       <LinksSection title="Povežite se s nama" links={socialLinks} />

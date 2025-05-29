@@ -20,15 +20,15 @@ export default function PredavaciDetailsCard(props: Props) {
 
   return (
     <div className="flex flex-col gap-10 lg:flex-row lg:gap-20">
-      <div className="mx-auto flex flex-col items-center gap-5 lg:mx-0">
-{(() => {
+      <div className="mx-auto flex flex-col items-center gap-5 lg:mx-0 w-full lg:w-auto">
+        {(() => {
           // Check if any speaker has an image
           const hasSpeakerImages = speakers.some(s => s.image?.trim());
           
           return (
             <>
               {speakers.map((speaker, idx) => (
-                <div key={idx} className="flex flex-col items-center gap-3 min-w-[300px]">
+                <div key={idx} className="flex flex-col items-center gap-3 w-full lg:min-w-[300px] text-center">
                   {hasSpeakerImages ? (
                     // Show speaker image in circle if any speaker has an image
                     <>
@@ -43,45 +43,55 @@ export default function PredavaciDetailsCard(props: Props) {
                           <div className="h-full w-full bg-red-400" />
                         )}
                       </div>
-                      <p className="font-nuito-sans text-center text-xl lg:text-2xl font-semibold text-[#D2D2D2] italic">
+                      <p className="font-nuito-sans text-center text-xl lg:text-2xl font-semibold text-[#D2D2D2] italic tracking-wide lg:tracking-normal px-4 lg:px-0">
                         {speaker.name ?? "UNKNOWN"}
                       </p>
+                      {speaker.title && (
+                        <p className="font-nuito-sans text-center text-lg font-medium text-[#A8A8A8] tracking-wide lg:tracking-normal px-4 lg:px-0">
+                          {speaker.title}
+                        </p>
+                      )}
                     </>
                   ) : (
-                    // Show logo above name in rectangle if no speaker images - SAME LARGE SIZE
+                    // Show logo above name in rectangle if no speaker images - SMALLER SIZE
                     <>
                       {talkInfo.logo && (
                         <div 
-                          className="flex items-center justify-center rounded-lg overflow-hidden bg-white/5 border border-white/10" 
-                          style={{height: '200px', width: '300px', minHeight: '200px', minWidth: '300px'}}
+                          className="flex items-center justify-center rounded-lg overflow-hidden bg-black border-2 border-gray-500/70" 
+                          style={{height: '120px', width: '180px', minHeight: '120px', minWidth: '180px'}}
                         >
                           <img
                             src={talkInfo.logo}
                             alt="Talk logo"
-                            className="max-h-full max-w-full object-contain"
-                            style={{maxHeight: '180px', maxWidth: '280px'}}
+                            className="max-h-full max-w-full object-contain p-3"
+                            style={{maxHeight: '100px', maxWidth: '160px'}}
                           />
                         </div>
                       )}
-                      <p className="font-nuito-sans text-center text-xl lg:text-2xl font-semibold text-[#D2D2D2] italic">
+                      <p className="font-nuito-sans text-center text-xl lg:text-2xl font-semibold text-[#D2D2D2] italic tracking-wide lg:tracking-normal px-4 lg:px-0">
                         {speaker.name ?? "UNKNOWN"}
                       </p>
+                      {speaker.title && (
+                        <p className="font-nuito-sans text-center text-lg font-medium text-[#A8A8A8] tracking-wide lg:tracking-normal px-4 lg:px-0">
+                          {speaker.title}
+                        </p>
+                      )}
                     </>
                   )}
                 </div>
               ))}
               
-              {/* Show logo below the last speaker if speakers have images */}
+              {/* Show logo below the last speaker if speakers have images - SMALLER SIZE */}
               {hasSpeakerImages && talkInfo.logo && (
                 <div 
-                  className="flex items-center justify-center rounded-lg overflow-hidden bg-white/5 border border-white/10" 
-                  style={{height: '200px', width: '300px', minHeight: '200px', minWidth: '300px'}}
+                  className="flex items-center justify-center rounded-lg overflow-hidden bg-black border-2 border-gray-500/70" 
+                  style={{height: '120px', width: '180px', minHeight: '120px', minWidth: '180px'}}
                 >
                   <img
                     src={talkInfo.logo}
                     alt="Talk logo"
-                    className="max-h-full max-w-full object-contain"
-                    style={{maxHeight: '180px', maxWidth: '280px'}}
+                    className="max-h-full max-w-full object-contain p-3"
+                    style={{maxHeight: '100px', maxWidth: '160px'}}
                   />
                 </div>
               )}
@@ -105,8 +115,8 @@ export default function PredavaciDetailsCard(props: Props) {
           </h1>
         </div>
         
-        <div className="font-open-sans text-white-smoke w-full space-y-10 rounded-xl border-2 border-[#4A4A4A] bg-black px-10 py-8 lg:px-16 lg:py-8">
-{hasSpeakerBiographies && (
+        <div className="font-open-sans text-white-smoke w-full space-y-10 rounded-xl border-2 border-[#4A4A4A] bg-black px-4 py-6 lg:px-16 lg:py-8 text-justify lg:text-left">
+          {hasSpeakerBiographies && (
             <div className="space-y-5">
               <p className="text-defense-lighter-blue font-roboto text-lg font-bold">
                 {(() => {
@@ -126,7 +136,7 @@ export default function PredavaciDetailsCard(props: Props) {
                 speaker.biography ? (
                   <p
                     key={idx}
-                    className="font-nuito-sans text-lg text-[#C7C7C7] italic whitespace-pre-line"
+                    className="font-nuito-sans text-lg text-[#C7C7C7] italic whitespace-pre-line text-justify lg:text-left"
                   >
                     {speaker.biography}
                   </p>
@@ -139,7 +149,7 @@ export default function PredavaciDetailsCard(props: Props) {
             <p className="text-attack-red font-roboto text-lg font-bold">
               O PREDAVANJU
             </p>
-            <p className="font-nuito-sans text-white-smoke text-lg whitespace-pre-line">
+            <p className="font-nuito-sans text-white-smoke text-lg whitespace-pre-line text-justify lg:text-left">
               {talkInfo.description}
             </p>
           </div>

@@ -4,6 +4,10 @@ import Footer from "./Footer";
 import { useState } from "react";
 import { cn } from "@src/assets/lib/utils";
 import events from "../data/predavanja"
+import type { EventInfo } from "../data/predavanja"
+
+// Type assertion for the imported events
+const typedEvents = events as EventInfo[][];
 
 const times: string[] = [];
 const START_HOUR = 9;
@@ -20,7 +24,7 @@ for (let hour = START_HOUR; hour < END_HOUR; hour++) {
 }
 
 // Calculate the top and height for each event
-const calculateEventStyle = (start: string, end: string) => {
+const calculateEventStyle = (start: string, end: string, event: EventInfo) => {
   const startMinutes =
     parseInt(start.split(":")[0]) * 60 + parseInt(start.split(":")[1]);
   const endMinutes =
@@ -36,7 +40,8 @@ const calculateEventStyle = (start: string, end: string) => {
       (TIME_SLOT_SPACING * times.length) +
     TIME_LINE_HEIGHT;
 
-  return { top: `${top}px`, height: `${height}px`, zIndex: top };
+  // Don't enforce minimum height - let CSS handle overflow
+  return { top: `${top}px`, height: `${height}px`, zIndex: Math.floor(top) };
 };
 
 type DaySelectButtonProps = {
@@ -45,6 +50,7 @@ type DaySelectButtonProps = {
   isSelected: boolean;
   text: string;
 };
+
 const DaySelectButton = ({
   onClick,
   className,
@@ -68,8 +74,11 @@ const DaySelectButton = ({
 };
 
 export default function RasporedPage() {
-  const timetableHeight = times.length  * TIME_SLOT_SPACING
+  const timetableHeight = times.length * TIME_SLOT_SPACING;
   const [dayIndex, setDayIndex] = useState<number>(0);
+
+  // Type the events array properly
+  const dayEvents: EventInfo[] = typedEvents[dayIndex];
 
   return (
     <div className="flex w-full flex-col gap-10 px-5 pb-10 md:gap-16 lg:mx-auto xl:w-2/3">
@@ -120,8 +129,8 @@ export default function RasporedPage() {
               }}
             />
           ))}
-          {events[dayIndex].map((event, i) => {
-            const style = calculateEventStyle(event.startTime, event.endTime);
+          {dayEvents.map((event, i) => {
+            const style = calculateEventStyle(event.startTime, event.endTime, event);
 
             return (
               <TimeSlotEntry
