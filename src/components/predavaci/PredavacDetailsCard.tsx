@@ -115,7 +115,8 @@ export default function PredavaciDetailsCard(props: Props) {
           </h1>
         </div>
         
-        <div className="font-open-sans text-white-smoke w-full space-y-10 rounded-xl border-2 border-[#4A4A4A] bg-black px-4 py-6 lg:px-16 lg:py-8 text-justify lg:text-left">
+        <div className="font-open-sans text-white-smoke w-full space-y-10 rounded-xl border-2 border-[#4A4A4A] bg-black px-4 py-6 lg:px-16 lg:py-8 text-left"
+        >
           {hasSpeakerBiographies && (
             <div className="space-y-5">
               <p className="text-defense-lighter-blue font-roboto text-lg font-bold">
