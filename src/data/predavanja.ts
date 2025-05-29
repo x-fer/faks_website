@@ -82,7 +82,7 @@ const eventsDayOne: EventInfo[] = [
             speakers: [{
                 name: "Davor Stanec",
                 biography: "Davor ima više od 20 godina iskustva u IT sektoru, većinom na inženjerskim pozicijama u velikim organizacijama. Posljednjih godina usmjeren je na područje sigurnosti informacijskih sustava, s naglaskom na identifikaciju sigurnosnih nedostataka te podršku klijentima u uspostavi i unapređenju okvira za upravljanje informacijskom sigurnošću u skladu s najboljim praksama.\n\nPoziciju i firmu nije stavio jer će biti nezaposlen tada? Ili ima nešto svoje ugl nije discloseao. Ja bih stavila ništa ili nezavisni konzultant ako želite da nešto piše.",
-                image: "speakers/davor_stanec.jpg"
+                image: "/speakers/davor_stanec.jpg"
             }],
             type: "policy"
         },
@@ -104,7 +104,7 @@ const eventsDayOne: EventInfo[] = [
                 biography: `Zdravko Petričušić dio je Spanovog Blue Teama primarno zaduženog za istraživanje sigurnosnih incidenata. Usmjeren je na reverzni inženjering, analizu zloćudnog koda i razvoj detekcijskih pravila za lokalne (on-premises) odnosno sustave u računalnom oblaku, s fokusom na Microsoft Azure/Entra ID. 
                 
                 Izvan radnog vremena istražuje metode zaobilaženja EDR rješenja, analizira legitimne i zloćudne programe, te sudjeluje na raznim CTF natjecanjima s ciljem unaprjeđivanja vlastitog znanja, ali i podučavanja kolega zainteresiranih za područje kibernetičke sigurnosti.`,
-                image: "speakers/zdravko_petricusic.JPG"
+                image: "/speakers/zdravko_petricusic.JPG"
             }],
             type: "tech"
         },
@@ -124,7 +124,7 @@ const eventsDayOne: EventInfo[] = [
                     Izabrana je kao jedna od 50 najutjecajnijih žena u kibernetičkoj sigurnosti u Europi prema SC Magazine UK i 50 najutjecajnijih žena u ICT-u u Hrvatskoj. Bila je članica Upravnog odbora međunarodne udruge certificiranih stručnjaka za kibernetičku sigurnost ISC2, gdje je vodila Etičko povjerenstvo.
 
                     Govornica je na brojnim međunarodnim konferencijama, mentorica mladim stručnjacima i predana razvoju globalne zajednice kibernetičke sigurnosti. Također je sudjelovala u prestižnom IVLP programu američkog State Departmenta s fokusom na kibernetičku sigurnost.`,
-                image: "speakers/biljana cerin.jpg"
+                image: "/speakers/biljana cerin.jpg"
             }],
             type: "policy"
         },
@@ -140,7 +140,7 @@ const eventsDayOne: EventInfo[] = [
             speakers: [{
                 name: "Ivan Fratrić",
                 biography: `Ivan Fratrić je inženjer i istraživač u Googleovom Project Zero timu u Švicarskoj, gdje se bavi otkrivanjem ranjivosti u popularnom softveru kao što su web preglednici, aplikacije za slanje poruka i mobilni operacijski sustavi. Prije toga radio je na analizi sigurnosti Googleovih softverskih proizvoda. Prije Googlea bio je znanstveni novak na Fakultetu Elektrotehnike i Računarstva u Zagrebu, gdje je doktorirao 2011. godine. Bavi se istraživanjem sigurnosti više od desetljeća te je objavio više radova i predavanja na konferencijama na tu temu. Autor je nekoliko popularnih alata otvorenog koda za otkrivanje ranjivosti.`,
-                image: "speakers/ivan_fratric.jpg"
+                image: "/speakers/ivan_fratric.jpg"
             }],
             type: "keynote"
         },
@@ -158,7 +158,7 @@ const eventsDayOne: EventInfo[] = [
                 biography: `Vladimir Pezo pridružio se ReversingLabsu 2022. godine, gdje kao Threat Research Intern prati nove napade na repozitorije otvorenog koda, analizira maliciozni kod i sudjeluje u održavanju interne baze zlonamjernih paketa. Student je 2. godine diplomskog studija Računarske znanosti na FER-u.
  
 `,
-                image: "speakers/vladimir_pezo.jpg"
+                image: "/speakers/vladimir_pezo.jpg"
             }],
             type: "tech"
         },
@@ -175,7 +175,7 @@ const eventsDayOne: EventInfo[] = [
                 name: "Jakov Đogić",
                 biography: `Jakov radi u Nacionalnom CERT-u kao wannabe pentester, guru elektroničke certifikacije te cyber awareness influencer. Višestruki osvajač mobitela i zelenih karti za SAD, a u slobodno vrijeme financijski pomaže nigerijskim prinčevima te moderira server/zajednicu CTF Hrvatska.
 `,
-                image: "speakers/jakov_dogic.png"
+                image: "/speakers/jakov_dogic.png"
             }],
             type: "policy"
         },
@@ -191,7 +191,7 @@ const eventsDayOne: EventInfo[] = [
             speakers: [{
                 name: "Benjamin Nadarević",
                 biography: 'Benjamin Nadarević je zaposlen kao zavodski suradnik u FER-ovom Laboratoriju za Sustave i Signale na poslovima suradnje s gospodarstvom u području kibernetičke sigurnosti. Prvenstveno se bavi penetracijskim testiranjima web aplikacija i izradom zadataka za nacionalna srednjoškolska i studentska CTF natjecanja. Osim toga, povremeno radi i na defanzivnim projektima vezanim za kibernetičku sigurnost.',
-                image: "speakers/benjamin_nadarević.jpg"
+                image: "/speakers/benjamin_nadarević.jpg"
             }],
             type: "tech"
         },
@@ -209,12 +209,12 @@ Fokus je isključivo na zaštiti poslovnih digitalnih identiteta, uz praktične 
             speakers: [{
                 name: "Marco Baban",
                 biography: 'Voditelj tima za zaštitu identiteta i aplikacija u CS Computer Systems, s više od pet godina iskustva u IT industriji. Specijalizirao se za razvoj i implementaciju naprednih rješenja u području kibernetičke sigurnosti. Njegovo bogato inženjersko iskustvo uključuje rad s vrhunskim sigurnosnim tehnologijama kao što su Application Delivery Controllers (ADC), Web Application Firewalls (WAF), Next-Generation Firewall (NGFW) te Privileged Access Management (PAM) sustavi. Nositelj je prestižnih stručnih certifikata, uključujući F5 Solutions Expert, Check Point Master, CyberArk PAM i CSC Delivery Engineer. Njegov rad karakterizira posvećenost sigurnosti, učinkovitosti i inovacijama u zaštiti IT okruženja.',
-                image: "speakers/Marco_Baban.jpg"
+                image: "/speakers/Marco_Baban.jpg"
             },
             {
                 name: "Matija Čiček",
                 biography:"Matija Čiček stručnjak je za kibernetičku sigurnost u CS Computer Systems, kojeg pokreće duboka znatiželja za razumijevanje načina na koji prijetnje nastaju, razvijaju se i mogu biti otkrivene prije nego što postanu napad. U svakodnevnom radu bavi se implementacijom sigurnosnih rješenja poput CyberArk-a, Silverforta i Trellixa, a posebno ga motivira proučavanje složenih prijetnji, s naglaskom na područja kao što su Threat Intelligence, Threat Hunting, OSINT i Social Engineering. Redovito istražuje nove koncepte, alate i taktike, uz stalnu težnju za usavršavanjem i produbljivanjem znanja. Njegov rad oblikuje spoj znanstvene metodologije, tehničke ekspertize i strasti za sigurnost, s jasno usmjerenim ciljem: razumjeti prijetnje u njihovoj srži i graditi otpornije sigurnosne sustave.",
-                image:"speakers/matija_cicek.jpg"
+                image:"/speakers/matija_cicek.jpg"
             }],
             type: "tech"
         },
@@ -235,7 +235,7 @@ Fokus je isključivo na zaštiti poslovnih digitalnih identiteta, uz praktične 
                 Specijalizirao se za Red Team operacije i simulacija napadača (adversary simulation) te sigurnost Active Directory okruženja.
                 Luka koristi svoje znanje kako bi pomogao organizacijama da ojačaju obranu i budu spremnije za stvarne prijetnje.
                 Vjeruje da je najbolja zaštita ona koja proizlazi iz razumijevanja načina razmišljanja i taktika pravih napadača.`,
-                image: "speakers/LS.jpg"
+                image: "/speakers/LS.jpg"
             }],
             type: "tech"
         },
