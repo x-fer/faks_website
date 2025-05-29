@@ -43,7 +43,7 @@ export type Event = TalkEvent | NonTalkEvent;
 
 const times: string[] = [];
 const START_HOUR = 9;
-const END_HOUR = 20;
+const END_HOUR = 19;
 
 const TIME_SLOT_SPACING = 120; // Height of each time slot in pixels
 const TIME_LINE_HEIGHT = 3;
@@ -112,7 +112,7 @@ export default function RasporedPage() {
   const dayEvents: Event[] = events[dayIndex];
 
   return (
-    <div className="flex w-full flex-col gap-10 px-5 pb-10 md:gap-16 lg:mx-auto xl:w-2/3">
+    <div className="flex w-full flex-col gap-10 pl-1 pr-5 pb-10 md:px-5 md:gap-16 lg:mx-auto xl:w-2/3">
       <div className="text-md mt-20 flex w-2/3 self-center rounded-xl bg-black font-semibold text-gray-400 sm:w-1/2 md:text-xl 2xl:w-1/3">
         <DaySelectButton
           text="1. dan"
@@ -131,10 +131,10 @@ export default function RasporedPage() {
         raspored za dan {dayIndex === 0 ? "7" : "8"}.6.2025.
       </h1>
       <div
-        className="relative flex gap-x-5"
+        className="relative flex gap-x-0 md:gap-x-5"
         style={{ height: `${timetableHeight}px` }}
       >
-        <div className="hidden flex-col sm:flex">
+        <div className="flex-col sm:flex">
           {times.slice(0, -1).map((time) => (
             <div
               key={time}
@@ -142,7 +142,7 @@ export default function RasporedPage() {
                 height: `${TIME_SLOT_SPACING}px`,
               }}
             >
-              <div className="time font-open-sans flex -translate-y-1/2 items-center text-sm font-semibold text-gray-500 md:text-xl">
+              <div className="time font-open-sans flex -translate-y-1/2 items-center text-xl font-semibold text-gray-500 -rotate-90 md:rotate-0">
                 {time}
               </div>
             </div>

@@ -58,24 +58,24 @@ export default function TimeSlotEntry({ event, style }: Props) {
   return (
     <div
       className={cn(
-        "absolute flex flex-col justify-between rounded-md border-2 px-1.5 py-1 inset-shadow-[0_0_50px_5px] md:border-3 overflow-hidden md:px-2 md:py-1.5", // MODIFIED: Base padding reduced to px-1.5 py-1. Restored md: padding slightly. Removed min-h for default.
+        "absolute flex flex-col justify-between rounded-md border-2 px-3 py-2 inset-shadow-[0_0_50px_5px] md:border-3 overflow-hidden md:px-4 md:py-2",
         outerDivStyle,
-        event.small && "py-0.5 px-1 rounded-sm min-h-[28px]", // MODIFIED: Adjusted padding for small, reduced min-h further.
+        event.small && "rounded-sm min-h-[28px]",
       )}
       style={{ ...style }}
     >
       <p
         className={cn(
-          "font-open-sans text-xs text-white-smoke line-clamp-3 sm:text-sm md:text-base md:line-clamp-2", // MODIFIED: Base font to text-xs, line-clamp-3 for mobile. sm:text-sm. md:line-clamp-2
-          event.small && "text-xs md:text-sm line-clamp-1", // MODIFIED: Ensured small is also text-xs base, md:text-sm. line-clamp-1 for small.
+          "font-open-sans font-medium text-xs text-white-smoke line-clamp-3 sm:text-base",
+          event.small && "line-clamp-1 text-gray-300 italic",
         )}
       >
         {event.isTalk ? event.talkInfo.title : event.title}
       </p>
       {event.isTalk && !event.small && (
-        <div className="flex items-center gap-0.5 mt-0.5"> {/* MODIFIED: Reduced gap to gap-0.5 */}
+        <div className="flex items-center gap-2">
           <User className="size-3 md:size-4 flex-shrink-0" color={icon.color} />
-          <p className="font-open-sans overflow-hidden text-[11px] text-nowrap overflow-ellipsis text-gray-400 uppercase sm:text-xs md:text-sm"> {/* MODIFIED: Base speaker font to text-[11px] (custom), sm:text-xs, md:text-sm */}
+          <p className="font-open-sans overflow-hidden text-[11px] text-nowrap overflow-ellipsis text-gray-400 uppercase sm:text-xs md:text-sm">
             {formatSpeakers(event.talkInfo.speakers)}
           </p>
         </div>

@@ -37,7 +37,7 @@ const eventsDayOne: EventInfo[] = [
         title: "Otvorenje",
         isTalk: false,
         startTime: "09:30",
-        endTime: "09:59",
+        endTime: "10:00",
         small: false,
     },
     {
@@ -60,22 +60,22 @@ const eventsDayOne: EventInfo[] = [
     },
     {
         isTalk: false,
-        startTime: "10:46",
-        endTime: "10:59",
+        startTime: "10:45",
+        endTime: "11:00",
         title: 'Pauza',
         small: true
     },
     {
         isTalk: false,
-        startTime: "15:11",
-        endTime: "15:29",
+        startTime: "15:10",
+        endTime: "15:30",
         title: 'Pauza',
         small: true
     },
     {
         isTalk: false,
-        startTime: "12:06",
-        endTime: "12:59",
+        startTime: "12:05",
+        endTime: "13:00",
         title: 'Pauza',
         small: true
     },
@@ -128,8 +128,8 @@ const eventsDayOne: EventInfo[] = [
             speakers: [{
                 gender:"male",
                 name: "Zdravko Petričušić",
-                biography: `Zdravko Petričušić dio je Spanovog Blue Teama primarno zaduženog za istraživanje sigurnosnih incidenata. Usmjeren je na reverzni inženjering, analizu zloćudnog koda i razvoj detekcijskih pravila za lokalne (on-premises) odnosno sustave u računalnom oblaku, s fokusom na Microsoft Azure/Entra ID. 
-                
+                biography: `Zdravko Petričušić dio je Spanovog Blue Teama primarno zaduženog za istraživanje sigurnosnih incidenata. Usmjeren je na reverzni inženjering, analizu zloćudnog koda i razvoj detekcijskih pravila za lokalne (on-premises) odnosno sustave u računalnom oblaku, s fokusom na Microsoft Azure/Entra ID.
+
                 Izvan radnog vremena istražuje metode zaobilaženja EDR rješenja, analizira legitimne i zloćudne programe, te sudjeluje na raznim CTF natjecanjima s ciljem unaprjeđivanja vlastitog znanja, ali i podučavanja kolega zainteresiranih za područje kibernetičke sigurnosti.`,
                 image: "/speakers/zdravko_petricusic.JPG",
                 title:"Cyber Security Analyst"
@@ -190,7 +190,7 @@ const eventsDayOne: EventInfo[] = [
                 title:"Threat Researcher u Threat Detection teamu",
                 name: "Vladimir Pezo",
                 biography: `Vladimir Pezo pridružio se ReversingLabsu 2022. godine, gdje kao Threat Research Intern prati nove napade na repozitorije otvorenog koda, analizira maliciozni kod i sudjeluje u održavanju interne baze zlonamjernih paketa. Student je 2. godine diplomskog studija Računarske znanosti na FER-u.
- 
+
 `,
                 image: "/speakers/vladimir_pezo.jpg"
             }],
@@ -293,8 +293,8 @@ const eventsDayTwo: EventInfo[] = [
     {
         isTalk: false,
         title: "CTF",
-        startTime: "09:00",
-        endTime: "18:00",
+        startTime: "10:00",
+        endTime: "17:00",
     }
 ]
 
