@@ -183,8 +183,8 @@ const eventsDayOne: EventInfo[] = [
             }],
             type: "policy"
         },
-        startTime: "11:35",
-        endTime: "12:05",
+        startTime: "14:10",
+        endTime: "14:40",
     },
     {
         isTalk: true,
@@ -240,8 +240,8 @@ const eventsDayOne: EventInfo[] = [
             }],
             type: "policy"
         },
-        startTime: "14:10",
-        endTime: "14:40",
+        startTime: "11:35",
+        endTime: "12:05",
     },
     {
         isTalk: true,
