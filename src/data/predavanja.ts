@@ -80,6 +80,13 @@ const eventsDayOne: EventInfo[] = [
         small: true
     },
     {
+        isTalk: false,
+        startTime: "16:46",
+        endTime: "19:00",
+        title: 'Druženje',
+        small: true
+    },
+    {
         isTalk: true,
         talkInfo: {
             title: "Kako danas izgledaju ransomware napadi?",
