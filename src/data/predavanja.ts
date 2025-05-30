@@ -107,6 +107,24 @@ const eventsDayOne: EventInfo[] = [
     {
         isTalk: true,
         talkInfo: {
+            title: "Flash talks",
+            description: "",
+            type: "policy",
+            logo:"",
+            speakers: [{
+                gender:"male",
+                title:"",
+                name: "",
+                biography: "",
+                image: ""
+            }]
+        },
+        startTime: "15:30",
+        endTime: "16:35",
+    },
+    {
+        isTalk: true,
+        talkInfo: {
             title: "NIS2 u praksi, izazovi s terena.",
             description: "Predavanje će pružiti pregled ključnih aspekata NIS2 direktive, s posebnim naglaskom na njenu primjenu u Republici Hrvatskoj. Umjesto suhoparnog nabrajanja regulatornih zahtjeva, fokus će biti na praktičnim izazovima s kojima se organizacije suočavaju pri usklađivanju — od procjene rizika do implementacije sigurnosnih mjera. Kroz konkretne primjere iz prakse sudionici će dobiti jasniju sliku što NIS2 znači za njihovo poslovanje i kako izbjeći najčešće zamke u provedbi.",
             logo:"",
@@ -165,8 +183,8 @@ const eventsDayOne: EventInfo[] = [
             }],
             type: "policy"
         },
-        startTime: "14:10",
-        endTime: "14:40",
+        startTime: "11:35",
+        endTime: "12:05",
     },
     {
         isTalk: true,
@@ -222,8 +240,8 @@ const eventsDayOne: EventInfo[] = [
             }],
             type: "policy"
         },
-        startTime: "11:35",
-        endTime: "12:05",
+        startTime: "14:10",
+        endTime: "14:40",
     },
     {
         isTalk: true,
