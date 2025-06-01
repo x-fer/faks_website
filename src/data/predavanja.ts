@@ -26,6 +26,7 @@ export type TalkEvent = BaseEvent & {
 
 type NonTalkEvent = BaseEvent & {
     isTalk: false;
+    subtitle?: string
     title: string
     talkInfo?: undefined;
 };
@@ -83,7 +84,8 @@ const eventsDayOne: EventInfo[] = [
         isTalk: false,
         startTime: "16:46",
         endTime: "19:00",
-        title: 'Druženje',
+        title: 'Capture The Flask',
+        subtitle: 'Druženje',
         small: true
     },
     {
