@@ -84,7 +84,7 @@ const eventsDayOne: EventInfo[] = [
         isTalk: false,
         startTime: "16:46",
         endTime: "19:00",
-        title: 'Capture The Flask - powered by Oracle',
+        title: 'Capture The Flask',
         subtitle: 'Druženje',
         small: true
     },
