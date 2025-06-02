@@ -43,7 +43,7 @@ export type Event = TalkEvent | NonTalkEvent;
 
 const times: string[] = [];
 const START_HOUR = 9;
-const END_HOUR = 19;
+const END_HOUR = 20;
 
 const TIME_SLOT_SPACING = 120; // Height of each time slot in pixels
 const TIME_LINE_HEIGHT = 3;
