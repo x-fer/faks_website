@@ -80,21 +80,22 @@ export default function TimeSlotEntry({ event, style }: Props) {
             {event.subtitle}
           </p>
         )}
+        <p className="mt-1 text-gray-400 font-open-sans text-xs xl:hidden">{event.startTime} - {event.endTime}</p>
       </div>
 
       <div className="flex justify-between w-full">
-        {event.isTalk && (
+        {event.isTalk && event.talkInfo.speakers !== undefined && (
           <div className="flex items-center gap-2">
             <User
               className="size-3 flex-shrink-0 md:size-4"
               color={icon.color}
             />
-            <p className="font-open-sans overflow-hidden text-[11px] text-nowrap overflow-ellipsis text-gray-400 uppercase sm:text-xs md:text-sm">
-              {event.talkInfo.speakers === undefined ? "UNKNOWN" : event.talkInfo.speakers?.map(s => s.name).join(', ')}
+            <p className="font-open-sans overflow-hidden text-[11px] overflow-ellipsis text-gray-400 uppercase sm:text-xs md:text-sm">
+              {event.talkInfo.speakers.map(s => s.name).join(', ')}
             </p>
           </div>
         )}
-        <p className="ml-auto text-gray-300 font-open-sans text-md">{event.startTime} - {event.endTime}</p>
+        <p className="ml-auto text-gray-400 font-open-sans text-sm hidden xl:block">{event.startTime} - {event.endTime}</p>
       </div>
     </div>
   );
