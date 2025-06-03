@@ -113,13 +113,6 @@ const eventsDayOne: EventInfo[] = [
             description: "",
             type: "policy",
             logo:"",
-            speakers: [{
-                gender:"male",
-                title:"",
-                name: "",
-                biography: "",
-                image: ""
-            }]
         },
         startTime: "15:30",
         endTime: "16:35",
