@@ -314,7 +314,7 @@ const eventsDayTwo: EventInfo[] = [
         isTalk: false,
         title: "CTF",
         startTime: "10:00",
-        endTime: "17:00",
+        endTime: "18:00",
     }
 ]
 
