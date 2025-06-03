@@ -82,7 +82,7 @@ const eventsDayOne: EventInfo[] = [
     },
     {
         isTalk: false,
-        startTime: "16:46",
+        startTime: "16:35",
         endTime: "19:00",
         title: 'Capture The Flask',
         subtitle: 'Druženje',
