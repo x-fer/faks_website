@@ -104,7 +104,7 @@ const eventsDayOne: EventInfo[] = [
             }]
         },
         startTime: "11:00",
-        endTime: "11:30",
+        endTime: "11:40",
     },
     {
         isTalk: true,
@@ -114,8 +114,8 @@ const eventsDayOne: EventInfo[] = [
             type: "policy",
             logo:"",
         },
-        startTime: "15:50",
-        endTime: "16:55",
+        startTime: "15:30",
+        endTime: "16:50",
     },
     {
         isTalk: true,
@@ -133,7 +133,7 @@ const eventsDayOne: EventInfo[] = [
             type: "policy",
         },
         startTime: "11:00",
-        endTime: "11:30",
+        endTime: "11:40",
     },
     {
         isTalk: true,
@@ -156,7 +156,7 @@ const eventsDayOne: EventInfo[] = [
             }],
             type: "tech"
         },
-        startTime: "12:05",
+        startTime: "11:55",
         endTime: "12:25",
     },
     {
@@ -235,7 +235,7 @@ const eventsDayOne: EventInfo[] = [
             }],
             type: "policy"
         },
-        startTime: "12:05",
+        startTime: "11:55",
         endTime: "12:25",
     },
     {
