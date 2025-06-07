@@ -68,21 +68,21 @@ const eventsDayOne: EventInfo[] = [
     },
     {
         isTalk: false,
-        startTime: "15:10",
-        endTime: "15:30",
+        startTime: "15:30",
+        endTime: "15:50",
         title: 'Pauza',
         small: true
     },
     {
         isTalk: false,
-        startTime: "12:05",
-        endTime: "13:00",
+        startTime: "12:25",
+        endTime: "13:20",
         title: 'Pauza',
         small: true
     },
     {
         isTalk: false,
-        startTime: "16:35",
+        startTime: "16:55",
         endTime: "19:00",
         title: 'Capture The Flask',
         subtitle: 'Druženje',
@@ -114,8 +114,8 @@ const eventsDayOne: EventInfo[] = [
             type: "policy",
             logo:"",
         },
-        startTime: "15:30",
-        endTime: "16:35",
+        startTime: "15:50",
+        endTime: "16:55",
     },
     {
         isTalk: true,
@@ -156,8 +156,8 @@ const eventsDayOne: EventInfo[] = [
             }],
             type: "tech"
         },
-        startTime: "11:35",
-        endTime: "12:05",
+        startTime: "12:05",
+        endTime: "12:25",
     },
     {
         isTalk: true,
@@ -178,8 +178,8 @@ const eventsDayOne: EventInfo[] = [
             }],
             type: "policy"
         },
-        startTime: "14:10",
-        endTime: "14:40",
+        startTime: "14:30",
+        endTime: "15:00",
     },
     {
         isTalk: true,
@@ -196,8 +196,8 @@ const eventsDayOne: EventInfo[] = [
             }],
             type: "keynote"
         },
-        startTime: "13:00",
-        endTime: "14:00",
+        startTime: "13:20",
+        endTime: "14:20",
     },
     {
         isTalk: true,
@@ -216,8 +216,8 @@ const eventsDayOne: EventInfo[] = [
             }],
             type: "tech"
         },
-        startTime: "14:10",
-        endTime: "14:40",
+        startTime: "14:30",
+        endTime: "15:00",
     },
     {
         isTalk: true,
@@ -235,8 +235,8 @@ const eventsDayOne: EventInfo[] = [
             }],
             type: "policy"
         },
-        startTime: "11:35",
-        endTime: "12:05",
+        startTime: "12:05",
+        endTime: "12:25",
     },
     {
         isTalk: true,
@@ -253,8 +253,8 @@ const eventsDayOne: EventInfo[] = [
             }],
             type: "tech"
         },
-        startTime: "14:45",
-        endTime: "15:10",
+        startTime: "15:05",
+        endTime: "15:30",
     },
     {
         isTalk: true,
@@ -280,8 +280,8 @@ Fokus je isključivo na zaštiti poslovnih digitalnih identiteta, uz praktične 
             }],
             type: "tech"
         },
-        startTime: "15:30",
-        endTime: "16:00",
+        startTime: "15:50",
+        endTime: "16:20",
     },
     {
         isTalk: true,
@@ -304,8 +304,8 @@ Fokus je isključivo na zaštiti poslovnih digitalnih identiteta, uz praktične 
             }],
             type: "tech"
         },
-        startTime: "16:05",
-        endTime: "16:35",
+        startTime: "16:25",
+        endTime: "16:55",
     }
 ]
 
