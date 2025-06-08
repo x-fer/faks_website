@@ -39,12 +39,7 @@ export default function Landing() {
             Zagreb
           </p>
         </div>
-        <a
-          href="/flash-talk"
-          className="inset-shadow-attack-red/20 border-attack-darker-red font-open-sans rounded-md border-2 bg-black px-10 py-3 text-lg font-bold text-attack-darker-red inset-shadow-[0_0_50px_5px] mt-4"
-        >
-          Prijavite svoj flash talk!
-        </a>
+
       </div>
       <div className="container mx-auto hidden h-screen flex-grow grid-cols-5 md:grid">
         <div className="col-span-3 my-auto flex-col space-y-30">
@@ -52,14 +47,6 @@ export default function Landing() {
           <div className="mx-4 flex items-center justify-between">
             <IconSpacerText text="7. i 8. lipnja 2025." icon={Calendar} />
             <IconSpacerText text="FER, Ulica Grada Vukovara 39 Zagreb" icon={MapPin} />
-          </div>
-          <div className="flex justify-center mt-16">
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfyre-JnrLKU_fyHokbIOR772-Vm10dJuAPjkCE19X3_-X1Zw/viewform"
-              className="inset-shadow-attack-red/20 border-attack-darker-red font-open-sans rounded-md border-2 bg-black px-16 py-4 text-2xl font-bold text-attack-darker-red inset-shadow-[0_0_50px_5px] hover:bg-attack-darker-red hover:text-black transition-colors duration-300"
-            >
-              Prijavite svoj flash talk!
-            </a>
           </div>
         </div>
         <img src="/hero.svg" className="col-span-2 my-auto" alt="Hero image" />
